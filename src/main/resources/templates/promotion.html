@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Theater</title>
+  <link th:rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
+  <script th:src="@{/js/bootstrap.min.js}"></script>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai&display=swap" rel="stylesheet">
+
+</head>
+<body style="background-color:white;">
+
+<header>
+  <div th:insert="fragments/navbar :: navbar"></div>
+</header>
+
+<div th:insert="fragments/header :: header"></div>
+  <h4>โปรโมชั่นทั้งหมด</h4>
+
+  <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    </div>
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="https://cdn.majorcineplex.com/uploads/content/16632/cover_16632.jpg" class="d-block w-100" alt="...">
+      </div>
+      <div class="carousel-item">
+        <img src="http://www.starenews.com/wp-content/uploads/2020/11/%E0%B9%82%E0%B8%9A%E0%B8%A7%E0%B9%8C%E0%B8%A5%E0%B8%B4%E0%B9%88%E0%B8%87%E0%B9%80%E0%B8%81%E0%B8%A1%E0%B8%A5%E0%B8%B0-26-%E0%B8%9A%E0%B8%B2%E0%B8%97_%E0%B9%81%E0%B8%99%E0%B8%A7%E0%B8%99%E0%B8%AD%E0%B8%99.jpg" class="d-block w-100" alt="...">
+      </div>
+      <div class="carousel-item">
+        <img src="https://thethaiger.com/th/wp-content/uploads/sites/9/2019/11/78269287_967004260322081_6136094328390418432_n.jpg" class="d-block w-100" alt="...">
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+
+
+<footer>
+  <div th:insert="fragments/footer :: footer"></div>
+</footer>
+</body>
+<style>
+
+    div{
+        font-family:'Noto Sans Thai', sans-serif;
+    }
+
+    #carouselExampleIndicators{
+        margin-top: 35px;
+        margin-left: 220px;
+        margin-bottom: 80px;
+        width: 1000px;
+        height: 500px;
+
+    }
+</style>
+</html>
