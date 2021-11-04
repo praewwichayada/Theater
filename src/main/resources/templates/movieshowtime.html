@@ -23,12 +23,14 @@
 <!--<div th:insert="fragments/header :: header"></div>-->
 
 
-<div class="container">
+<div class="container-fluid">
     <div class="row">
-        <div class="col-md-auto">
+        <div class="col-8" style="margin-left:3em">
+            <div class="row">
+        <div class="col" style="margin-left:4em; margin-bottom:7em;">
             <img src="https://images.thaiza.com/235/235_20180410115425..jpg" class="img-thumbnail" alt="...">
         </div>
-        <div class="col">
+        <div class="col" style="margin-right:11em;">
             <h3>อเวนเจอร์ อินฟินิตี้วอล</h3>
             <h6> แอ็คชั่น </h6>
             <h6> 120 นาที</h6>
@@ -36,26 +38,416 @@
             <p>    xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx </p>
             <p>    xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx </p>
         </div>
-    </div>
-</div>
+            </div>
+            <div class="box-all-cinemas">
+                <ul class="nav nav-pills mb-3" id="cinemas-tab" role="tablist">
+                    <li class="nav-item">
+                        <a class="nav-link active" id="bkcinemas-tab" data-toggle="pill" href="#bkcinemas-showing" role="tab" aria-controls="bkcinemas-showing" aria-selected="true">
+                            เลือกรอบภาพยนตร์
+                        </a>
+                    </li>
+                </ul>
 
-<div class="box-all-cinemas">
-    <ul class="nav nav-pills mb-3" id="cinemas-tab" role="tablist">
+                <div class="tab-content" id="pills-tab-content">
+                    <div class="tab-pane fade active show" id="bkcinemas-showing" role="tabpanel" aria-labelledby="bkcinemas-tab">
+<!--                        <h4 style="magin-left:3em; margin-bottom:2em; color:black;">1.เลือกโรงภาพยนตร์ และ รอบฉาย</h4>-->
+                        <div class="accordion" id="accordionPanelsStayOpenExample">
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="panelsStayOpen-headingOne">
+                                    <div class="d-grid gap-2">
+                                    <button class="btn btn-outline-danger" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
+                                        พารากอน ซีนีเพล็กซ์
+                                    </button>
+                                    </div>
+                                </h2>
+                                <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show" aria-labelledby="panelsStayOpen-headingOne">
+                                    <div class="accordion-body">
+                                        <h4 style="margin-top:1em;">โรงภาพยนตร์ที่ 1     &nbsp;    &nbsp;
+                                            <img border="0" src="http://image.free.in.th/v/2013/iy/211102033326.png" style="margin-left:px; width:40px; height: 40px;"/>
+                                        </h4>
+                                        <div class="grid">
+                                            <button type="button" id="m11bt11" class="btn btn-outline-dark" data-toggle="pill" href="#fourkbkcinemas-showingseat" role="tab" aria-controls="fourkbkcinemas-showingseat" style="margin-top: 2em; margin-left: 3em; padding-left: 1em; padding-right: 1em;">11.00</button>
+                                            <button type="button" id="m11bt15" class="btn btn-outline-dark" data-toggle="pill" href="#fourkbkcinemas-showingseat" role="tab" aria-controls="fourkbkcinemas-showingseat" style="margin-top: 2em; margin-left: 3em; padding-left: 1em; padding-right: 1em;">15.00</button>
+                                        </div>
+                                        <p  style="color:white; padding-bottom: 2em; margin-bottom: 2em; border-bottom: solid 1px #494949; margin-left: 1em; padding-left: 2em; margin-right: 10em;">_</p>
 
-        <li class="nav-item">
-            <a class="nav-link active" id="bkcinemas-tab" data-toggle="pill" href="#bkcinemas-showing" role="tab" aria-controls="bkcinemas-showing" aria-selected="true">
-                รอบฉาย
-            </a>
-        </li>
-    </ul>
+                                        <h4 style="margin-top:1em;">โรงภาพยนตร์ที่ 2     &nbsp;    &nbsp;
+                                            <img border="0" src="http://image.free.in.th/v/2013/im/211103095250.png" style="margin-left:px; width:45px; height: 45px;"/>
 
-    <div class="tab-content" id="pills-tab-content">
-        <div class="tab-pane fade active show" id="bkcinemas-showing" role="tabpanel" aria-labelledby="bkcinemas-tab">
-            <h5>พารากอน ซีนีเพล็กซ์</h5>
-            <h5>ควอเทียร์ ซีเนอาร์ต</h5>
+                                        </h4>
+                                        <div class="grid">
+                                            <button type="button" id="m12bt13" class="btn btn-outline-dark" data-toggle="pill" href="#threedbkcinemas-showingseat" role="tab" aria-controls="threedbkcinemas-showingseat" style="margin-top: 2em; margin-left: 3em; padding-left: 1em; padding-right: 1em;">13.00</button>
+                                            <button type="button" id="m12bt18" class="btn btn-outline-dark" data-toggle="pill" href="#threedbkcinemas-showingseat" role="tab" aria-controls="threedbkcinemas-showingseat" style="margin-top: 2em; margin-left: 3em; padding-left: 1em; padding-right: 1em;">18.00</button>
+                                        </div>
+                                        <p  style="color:white; padding-bottom: 2em; margin-bottom: 2em; border-bottom: solid 1px #494949; margin-left: 1em; padding-left: 2em; margin-right: 10em;">_</p>
+
+                                        <h4 style="margin-top:1em;">โรงภาพยนตร์ที่ 3     &nbsp;    &nbsp;
+                                            <img border="0" src="https://normal.studio/wp-content/uploads/2019/10/share-image-2019.png" style="margin-left:-15px; width:120px; height: 90px;"/>
+                                        </h4>
+                                        <div class="grid">
+                                            <button type="button" id="m13bt11" class="btn btn-outline-dark" data-toggle="pill" href="#normalbkcinemas-showingseat" role="tab" aria-controls="normalbkcinemas-showingseat" style="margin-top: 2em; margin-left: 3em; padding-left: 1em; padding-right: 1em;">11.00</button>
+                                            <button type="button" id="m13bt13" class="btn btn-outline-dark" data-toggle="pill" href="#normalbkcinemas-showingseat" role="tab" aria-controls="normalbkcinemas-showingseat" style="margin-top: 2em; margin-left: 3em; padding-left: 1em; padding-right: 1em;">13.00</button>
+                                            <button type="button" id="m13bt15" class="btn btn-outline-dark" data-toggle="pill" href="#normalbkcinemas-showingseat" role="tab" aria-controls="normalbkcinemas-showingseat" style="margin-top: 2em; margin-left: 3em; padding-left: 1em; padding-right: 1em;">15.00</button>
+                                            <button type="button" id="m13bt18" class="btn btn-outline-dark" data-toggle="pill" href="#normalbkcinemas-showingseat" role="tab" aria-controls="normalbkcinemas-showingseat" style="margin-top: 2em; margin-left: 3em; padding-left: 1em; padding-right: 1em;">18.00</button>
+                                        </div>
+                                        <p  style="color:white; padding-bottom: 2em; margin-bottom: 2em; border-bottom: solid 1px #494949; margin-left: 1em; padding-left: 2em; margin-right: 10em;">_</p>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="panelsStayOpen-headingTwo">
+                                    <div class="d-grid gap-2">
+                                        <button class="btn btn-outline-danger" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false" aria-controls="panelsStayOpen-collapseTwo">
+                                            ควอเทียร์ ซีเนอาร์ต
+                                        </button>
+                                    </div>
+                                </h2>
+                                <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingTwo">
+                                    <div class="accordion-body">
+                                        <h4 style="margin-top:1em;">โรงภาพยนตร์ที่ 1     &nbsp;    &nbsp;
+                                            <img border="0" src="http://image.free.in.th/v/2013/iy/211102033326.png" style="margin-left:px; width:40px; height: 40px;"/>
+                                        </h4>
+                                        <div class="grid">
+                                            <button type="button" id="m21bt11" class="btn btn-outline-dark" data-toggle="pill" href="#fourkbkcinemas-showingseat" role="tab" aria-controls="fourkbkcinemas-showingseat" style="margin-top: 2em; margin-left: 3em; padding-left: 1em; padding-right: 1em;">11.00</button>
+                                            <button type="button" id="m21bt15" class="btn btn-outline-dark" data-toggle="pill" href="#bkcinemas-showingseat" role="tab" aria-controls="bkcinemas-showingseat" style="margin-top: 2em; margin-left: 3em; padding-left: 1em; padding-right: 1em;">15.00</button>
+                                        </div>
+                                        <p id="1line" style="color:white; padding-bottom: 2em; margin-bottom: 2em; border-bottom: solid 1px #494949; margin-left: 1em; padding-left: 2em; margin-right: 10em;">_</p>
+
+                                        <h4 style="margin-top:1em;">โรงภาพยนตร์ที่ 2     &nbsp;    &nbsp;
+                                            <img border="0" src="http://image.free.in.th/v/2013/im/211103095250.png" style="margin-left:px; width:45px; height: 45px;"/>
+
+                                        </h4>
+                                        <div class="grid">
+                                            <button type="button" id="m22bt13" class="btn btn-outline-dark" data-toggle="pill" href="#threedbkcinemas-showingseat" role="tab" aria-controls="threedbkcinemas-showingseat" style="margin-top: 2em; margin-left: 3em; padding-left: 1em; padding-right: 1em;">13.00</button>
+                                            <button type="button" id="m22bt18" class="btn btn-outline-dark" data-toggle="pill" href="#3dbkcinemas-showingseat" role="tab" aria-controls="3dbkcinemas-showingseat" style="margin-top: 2em; margin-left: 3em; padding-left: 1em; padding-right: 1em;">18.00</button>
+                                        </div>
+                                        <p id="2line" style="color:white; padding-bottom: 2em; margin-bottom: 2em; border-bottom: solid 1px #494949; margin-left: 1em; padding-left: 2em; margin-right: 10em;">_</p>
+
+                                        <h4 style="margin-top:1em;">โรงภาพยนตร์ที่ 3     &nbsp;    &nbsp;
+                                            <img border="0" src="https://normal.studio/wp-content/uploads/2019/10/share-image-2019.png" style="margin-left:-15px; width:120px; height: 90px;"/>
+                                        </h4>
+                                        <div class="grid">
+                                            <button type="button" id="m23bt11" class="btn btn-outline-dark" data-toggle="pill" href="#normalbkcinemas-showingseat" role="tab" aria-controls="normalbkcinemas-showingseat" style="margin-top: 2em; margin-left: 3em; padding-left: 1em; padding-right: 1em;">11.00</button>
+                                            <button type="button" id="m23bt13" class="btn btn-outline-dark" data-toggle="pill" href="#normalbkcinemas-showingseat" role="tab" aria-controls="normalbkcinemas-showingseat" style="margin-top: 2em; margin-left: 3em; padding-left: 1em; padding-right: 1em;">13.00</button>
+                                            <button type="button" id="m23bt15" class="btn btn-outline-dark" data-toggle="pill" href="#normalbkcinemas-showingseat" role="tab" aria-controls="normalbkcinemas-showingseat" style="margin-top: 2em; margin-left: 3em; padding-left: 1em; padding-right: 1em;">15.00</button>
+                                            <button type="button" id="m23bt18" class="btn btn-outline-dark" data-toggle="pill" href="#normalbkcinemas-showingseat" role="tab" aria-controls="normalbkcinemas-showingseat" style="margin-top: 2em; margin-left: 3em; padding-left: 1em; padding-right: 1em;">18.00</button>
+                                        </div>
+                                        <p id="3line" style="color:white; padding-bottom: 2em; margin-bottom: 2em; border-bottom: solid 1px #494949; margin-left: 1em; padding-left: 2em; margin-right: 10em;">_</p>
+
+                                    </div>
+                                </div>
+                            </div>
+
+
+                        </div>
+                    </div>
+
+
+                    <!-----3D Theater----->
+                    <div class="tab-pane fade" id="threedbkcinemas-showingseat" role="tabpanel" aria-labelledby="threedbkcinemas-showingseat" style="background-color:#1e1e20;">
+                        <!--                        <h4 style="magin-left:3em; margin-bottom:2em; color:black;">2.เลือกที่นั่ง</h4>-->
+                        <img border="0" src="http://image.free.in.th/v/2013/im/211103095250.png" style="margin-left:20px; width:90px; height: 90px; margin-top:30px"/></br></br>
+                        <img border="0" src="http://image.free.in.th/v/2013/id/211102112448.jpg" style="margin-left:160px; width:620px; height: 80px; margin-bottom:70px; margin-top:70px;"/>
+                        <table class="center data" width="60%" style="margin-left:190px;">
+                            <tr style="height: 80px; border-color:#1e1e20;">
+                                <td class="right color-white bg-red" width="10%">A</td>
+                                <td class="center">
+                                    <label>
+                                        <!--                                        <a href="http://picture.in.th/id/ddcfed5efc6ddca742e6860c64a8ab3a"  target="_blank"><img border="0" src="http://image.free.in.th/v/2013/iq/211103013237.png" alt="images by free.in.th" /></a>-->
+                                        <img border="0" src="http://image.free.in.th/v/2013/im/211102103815.jpg" style="width:35px; height: 35px"/>
+                                        <img border="0" src="http://image.free.in.th/v/2013/im/211102103815.jpg" style="width:35px; height: 35px"/>
+                                        <img border="0" src="http://image.free.in.th/v/2013/im/211102103815.jpg" style="width:35px; height: 35px"/>
+                                        <img border="0" src="http://image.free.in.th/v/2013/im/211102103815.jpg" style="width:35px; height: 35px"/>
+                                        <img border="0" src="http://image.free.in.th/v/2013/im/211102103815.jpg" style="width:35px; height: 35px"/>
+                                        <img border="0" src="http://image.free.in.th/v/2013/im/211102103815.jpg" style="width:35px; height: 35px"/>
+                                        <img border="0" src="http://image.free.in.th/v/2013/im/211102103815.jpg" style="width:35px; height: 35px"/>
+                                        <img border="0" src="http://image.free.in.th/v/2013/im/211102103815.jpg" style="width:35px; height: 35px"/>
+                                    </label>
+                                </td>
+                                <td class="light  color-white bg-red" width="10%">A</td>
+                            </tr>
+
+                            <tr style="height: 80px;">
+                                <td class="right color-white bg-red" width="7%">B</td>
+                                <td class="center">
+                                    <label>
+                                        <img border="0" src="http://image.free.in.th/v/2013/im/211102103815.jpg" style="width:35px; height: 35px"/>
+                                        <img border="0" src="http://image.free.in.th/v/2013/im/211102103815.jpg" style="width:35px; height: 35px"/>
+                                        <img border="0" src="http://image.free.in.th/v/2013/im/211102103815.jpg" style="width:35px; height: 35px"/>
+                                        <img border="0" src="http://image.free.in.th/v/2013/im/211102103815.jpg" style="width:35px; height: 35px"/>
+                                        <img border="0" src="http://image.free.in.th/v/2013/im/211102103815.jpg" style="width:35px; height: 35px"/>
+                                        <img border="0" src="http://image.free.in.th/v/2013/im/211102103815.jpg" style="width:35px; height: 35px"/>
+                                        <img border="0" src="http://image.free.in.th/v/2013/im/211102103815.jpg" style="width:35px; height: 35px"/>
+                                        <img border="0" src="http://image.free.in.th/v/2013/im/211102103815.jpg" style="width:35px; height: 35px"/>
+
+                                    </label>
+                                </td>
+                                <td class="light  color-white bg-red" width="7%">B</td>
+                            </tr>
+
+                            <tr style="height: 80px;">
+                                <td class="right color-white bg-red" width="7%">C</td>
+                                <td class="center">
+                                    <label>
+                                        <img border="0" src="http://image.free.in.th/v/2013/it/211103091247.jpg" style="width:33px; height: 33px"/>
+                                        <img border="0" src="http://image.free.in.th/v/2013/it/211103091247.jpg" style="width:33px; height: 33px"/>
+                                        <img border="0" src="http://image.free.in.th/v/2013/it/211103091247.jpg" style="width:33px; height: 33px"/>
+                                        <img border="0" src="http://image.free.in.th/v/2013/it/211103091247.jpg" style="width:33px; height: 33px"/>
+                                        <img border="0" src="http://image.free.in.th/v/2013/it/211103091247.jpg" style="width:33px; height: 33px"/>
+                                        <img border="0" src="http://image.free.in.th/v/2013/it/211103091247.jpg" style="width:33px; height: 33px"/>
+                                        <img border="0" src="http://image.free.in.th/v/2013/it/211103091247.jpg" style="width:33px; height: 33px"/>
+                                        <img border="0" src="http://image.free.in.th/v/2013/it/211103091247.jpg" style="width:33px; height: 33px"/>
+                                    </label>
+                                </td>
+                                <td class="light  color-white bg-red" width="7%">C</td>
+                            </tr>
+
+                            <tr style="height: 80px;">
+                                <td class="right color-white bg-red" width="7%">D</td>
+                                <td class="center">
+                                    <label>
+                                        <img border="0" src="http://image.free.in.th/v/2013/ia/211103091536.jpg" style="width:36px; height: 36px"/>
+                                        <img border="0" src="http://image.free.in.th/v/2013/ia/211103091536.jpg" style="width:36px; height: 36px"/>
+                                        &nbsp;
+                                        <img border="0" src="http://image.free.in.th/v/2013/ia/211103091536.jpg" style="width:36px; height: 36px"/>
+                                        <img border="0" src="http://image.free.in.th/v/2013/ia/211103091536.jpg" style="width:36px; height: 36px"/>
+                                        &nbsp;
+                                        <img border="0" src="http://image.free.in.th/v/2013/ia/211103091536.jpg" style="width:36px; height: 36px"/>
+                                        <img border="0" src="http://image.free.in.th/v/2013/ia/211103091536.jpg" style="width:36px; height: 36px"/>
+
+
+                                    </label>
+                                </td>
+                                <td class="light  color-white bg-red" width="7%">D</td>
+                            </tr>
+                        </table>
+                        </br>
+                        </br>
+                        </br>
+                        </br>
+
+                        <img border="0" src="http://image.free.in.th/v/2013/im/211102103815.jpg" style="width:35px; height: 35px; margin-bottom:8px; margin-left:40px;"/>
+                        <p style="color:white; margin-left:90px; margin-top:-38px;">Normal Seat &nbsp; 260 บาท</p></br>
+                        <img border="0" src="http://image.free.in.th/v/2013/it/211103091247.jpg" style="width:33px; height: 33px; margin-bottom:8px; margin-left:40px;"/>
+                        <p style="color:white; margin-left:90px; margin-top:-38px;">Honeymoon Seat &nbsp; 360 บาท</p></br>
+                        <img border="0" src="http://image.free.in.th/v/2013/ia/211103091536.jpg" style="width:36px; height: 36px; margin-bottom:8px; margin-left:40px;"/>
+                        <p style="color:white; margin-left:90px; margin-top:-38px;">Honeymoon twin Seat &nbsp; 1000 บาท/คู่</p></br>
+                        </br>
+                        </br>
+                        </br>
+                    </div>
+
+
+                    <!-----4K Theater----->
+                    <div class="tab-pane fade" id="fourkbkcinemas-showingseat" role="tabpanel" aria-labelledby="fourbkcinemas-showingseat" style="background-color:#1e1e20;">
+<!--                        <h4 style="magin-left:3em; margin-bottom:2em; color:black;">2.เลือกที่นั่ง</h4>-->
+                        <img border="0" src="http://image.free.in.th/v/2013/iy/211102033326.png" style="margin-left:20px; width:90px; height: 90px; margin-top:30px"/></br></br>
+                        <img border="0" src="http://image.free.in.th/v/2013/id/211102112448.jpg" style="margin-left:160px; width:620px; height: 80px; margin-bottom:70px; margin-top:70px;"/>
+                        <table class="center data" width="60%" style="margin-left:190px;">
+                            <tr style="height: 80px; border-color:#1e1e20;">
+                                <td class="right color-white bg-red" width="10%">A</td>
+                                <td class="center">
+                                    <label>
+                                        <img border="0" src="http://image.free.in.th/v/2013/im/211102103815.jpg" style="width:35px; height: 35px"/>
+                                        <img border="0" src="http://image.free.in.th/v/2013/im/211102103815.jpg" style="width:35px; height: 35px"/>
+                                        <img border="0" src="http://image.free.in.th/v/2013/im/211102103815.jpg" style="width:35px; height: 35px"/>
+                                        <img border="0" src="http://image.free.in.th/v/2013/im/211102103815.jpg" style="width:35px; height: 35px"/>
+                                        <img border="0" src="http://image.free.in.th/v/2013/im/211102103815.jpg" style="width:35px; height: 35px"/>
+                                        <img border="0" src="http://image.free.in.th/v/2013/im/211102103815.jpg" style="width:35px; height: 35px"/>
+                                        <img border="0" src="http://image.free.in.th/v/2013/im/211102103815.jpg" style="width:35px; height: 35px"/>
+                                        <img border="0" src="http://image.free.in.th/v/2013/im/211102103815.jpg" style="width:35px; height: 35px"/>
+                                    </label>
+                                </td>
+                                <td class="light  color-white bg-red" width="10%">A</td>
+                            </tr>
+
+                            <tr style="height: 80px;">
+                                <td class="right color-white bg-red" width="7%">B</td>
+                                <td class="center">
+                                    <label>
+                                        <img border="0" src="http://image.free.in.th/v/2013/im/211102103815.jpg" style="width:35px; height: 35px"/>
+                                        <img border="0" src="http://image.free.in.th/v/2013/im/211102103815.jpg" style="width:35px; height: 35px"/>
+                                        <img border="0" src="http://image.free.in.th/v/2013/im/211102103815.jpg" style="width:35px; height: 35px"/>
+                                        <img border="0" src="http://image.free.in.th/v/2013/im/211102103815.jpg" style="width:35px; height: 35px"/>
+                                        <img border="0" src="http://image.free.in.th/v/2013/im/211102103815.jpg" style="width:35px; height: 35px"/>
+                                        <img border="0" src="http://image.free.in.th/v/2013/im/211102103815.jpg" style="width:35px; height: 35px"/>
+                                        <img border="0" src="http://image.free.in.th/v/2013/im/211102103815.jpg" style="width:35px; height: 35px"/>
+                                        <img border="0" src="http://image.free.in.th/v/2013/im/211102103815.jpg" style="width:35px; height: 35px"/>
+
+                                    </label>
+                                </td>
+                                <td class="light  color-white bg-red" width="7%">B</td>
+                            </tr>
+
+                            <tr style="height: 80px;">
+                                <td class="right color-white bg-red" width="7%">C</td>
+                                <td class="center">
+                                    <label>
+                                        <img border="0" src="http://image.free.in.th/v/2013/it/211103091247.jpg" style="width:33px; height: 33px"/>
+                                        <img border="0" src="http://image.free.in.th/v/2013/it/211103091247.jpg" style="width:33px; height: 33px"/>
+                                        <img border="0" src="http://image.free.in.th/v/2013/it/211103091247.jpg" style="width:33px; height: 33px"/>
+                                        <img border="0" src="http://image.free.in.th/v/2013/it/211103091247.jpg" style="width:33px; height: 33px"/>
+                                        <img border="0" src="http://image.free.in.th/v/2013/it/211103091247.jpg" style="width:33px; height: 33px"/>
+                                        <img border="0" src="http://image.free.in.th/v/2013/it/211103091247.jpg" style="width:33px; height: 33px"/>
+                                        <img border="0" src="http://image.free.in.th/v/2013/it/211103091247.jpg" style="width:33px; height: 33px"/>
+                                        <img border="0" src="http://image.free.in.th/v/2013/it/211103091247.jpg" style="width:33px; height: 33px"/>
+                                    </label>
+                                </td>
+                                <td class="light  color-white bg-red" width="7%">C</td>
+                            </tr>
+
+                            <tr style="height: 80px;">
+                                <td class="right color-white bg-red" width="7%">D</td>
+                                <td class="center">
+                                    <label>
+                                        <img border="0" src="http://image.free.in.th/v/2013/ia/211103091536.jpg" style="width:36px; height: 36px"/>
+                                        <img border="0" src="http://image.free.in.th/v/2013/ia/211103091536.jpg" style="width:36px; height: 36px"/>
+                                        &nbsp;
+                                        <img border="0" src="http://image.free.in.th/v/2013/ia/211103091536.jpg" style="width:36px; height: 36px"/>
+                                        <img border="0" src="http://image.free.in.th/v/2013/ia/211103091536.jpg" style="width:36px; height: 36px"/>
+                                        &nbsp;
+                                        <img border="0" src="http://image.free.in.th/v/2013/ia/211103091536.jpg" style="width:36px; height: 36px"/>
+                                        <img border="0" src="http://image.free.in.th/v/2013/ia/211103091536.jpg" style="width:36px; height: 36px"/>
+
+
+                                    </label>
+                                </td>
+                                <td class="light  color-white bg-red" width="7%">D</td>
+                            </tr>
+                        </table>
+                        </br>
+                        </br>
+                        </br>
+                        </br>
+
+                        <img border="0" src="http://image.free.in.th/v/2013/im/211102103815.jpg" style="width:35px; height: 35px; margin-bottom:8px; margin-left:40px;"/>
+                        <p style="color:white; margin-left:90px; margin-top:-38px;">Normal Seat &nbsp; 300 บาท</p></br>
+                        <img border="0" src="http://image.free.in.th/v/2013/it/211103091247.jpg" style="width:33px; height: 33px; margin-bottom:8px; margin-left:40px;"/>
+                        <p style="color:white; margin-left:90px; margin-top:-38px;">Honeymoon Seat &nbsp; 450 บาท</p></br>
+                        <img border="0" src="http://image.free.in.th/v/2013/ia/211103091536.jpg" style="width:36px; height: 36px; margin-bottom:8px; margin-left:40px;"/>
+                        <p style="color:white; margin-left:90px; margin-top:-38px;">Honeymoon twin Seat &nbsp; 1400 บาท/คู่</p></br>
+                        </br>
+                        </br>
+                        </br>
+                    </div>
+
+
+                    <!-----normal Theater----->
+                    <div class="tab-pane fade" id="normalbkcinemas-showingseat" role="tabpanel" aria-labelledby="normalbkcinemas-showingseat" style="background-color:#1e1e20;">
+                        <!--                        <h4 style="magin-left:3em; margin-bottom:2em; color:black;">2.เลือกที่นั่ง</h4>-->
+                        <img border="0" src="https://normal.studio/wp-content/uploads/2019/10/share-image-2019.png" style="margin-left:20px; width:240px; height: 130px; margin-top:30px"/></br></br>
+                        <img border="0" src="http://image.free.in.th/v/2013/id/211102112448.jpg" style="margin-left:160px; width:620px; height: 80px; margin-bottom:70px; margin-top:50px;"/>
+                        <table class="center data" width="70%" style="margin-left:145px;">
+                            <tr style="height: 80px; border-color:#1e1e20;">
+                                <td class="right color-white bg-red" width="10%">A</td>
+                                <td class="center">
+                                    <label>
+                                        <img border="0" src="http://image.free.in.th/v/2013/im/211102103815.jpg" style="width:35px; height: 35px"/>
+                                        <img border="0" src="http://image.free.in.th/v/2013/im/211102103815.jpg" style="width:35px; height: 35px"/>
+                                        <img border="0" src="http://image.free.in.th/v/2013/im/211102103815.jpg" style="width:35px; height: 35px"/>
+                                        <img border="0" src="http://image.free.in.th/v/2013/im/211102103815.jpg" style="width:35px; height: 35px"/>
+                                        <img border="0" src="http://image.free.in.th/v/2013/im/211102103815.jpg" style="width:35px; height: 35px"/>
+                                        <img border="0" src="http://image.free.in.th/v/2013/im/211102103815.jpg" style="width:35px; height: 35px"/>
+                                        <img border="0" src="http://image.free.in.th/v/2013/im/211102103815.jpg" style="width:35px; height: 35px"/>
+                                        <img border="0" src="http://image.free.in.th/v/2013/im/211102103815.jpg" style="width:35px; height: 35px"/>
+                                    </label>
+                                </td>
+                                <td class="light  color-white bg-red" width="10%">A</td>
+                            </tr>
+
+                            <tr style="height: 80px;">
+                                <td class="right color-white bg-red" width="7%">B</td>
+                                <td class="center">
+                                    <label>
+                                        <img border="0" src="http://image.free.in.th/v/2013/im/211102103815.jpg" style="width:35px; height: 35px"/>
+                                        <img border="0" src="http://image.free.in.th/v/2013/im/211102103815.jpg" style="width:35px; height: 35px"/>
+                                        <img border="0" src="http://image.free.in.th/v/2013/im/211102103815.jpg" style="width:35px; height: 35px"/>
+                                        <img border="0" src="http://image.free.in.th/v/2013/im/211102103815.jpg" style="width:35px; height: 35px"/>
+                                        <img border="0" src="http://image.free.in.th/v/2013/im/211102103815.jpg" style="width:35px; height: 35px"/>
+                                        <img border="0" src="http://image.free.in.th/v/2013/im/211102103815.jpg" style="width:35px; height: 35px"/>
+                                        <img border="0" src="http://image.free.in.th/v/2013/im/211102103815.jpg" style="width:35px; height: 35px"/>
+                                        <img border="0" src="http://image.free.in.th/v/2013/im/211102103815.jpg" style="width:35px; height: 35px"/>
+
+                                    </label>
+                                </td>
+                                <td class="light  color-white bg-red" width="7%">B</td>
+                            </tr>
+
+                            <tr style="height: 80px;">
+                                <td class="right color-white bg-red" width="7%">C</td>
+                                <td class="center">
+                                    <label>
+                                        <img border="0" src="http://image.free.in.th/v/2013/it/211103091247.jpg" style="width:33px; height: 33px"/>
+                                        <img border="0" src="http://image.free.in.th/v/2013/it/211103091247.jpg" style="width:33px; height: 33px"/>
+                                        <img border="0" src="http://image.free.in.th/v/2013/it/211103091247.jpg" style="width:33px; height: 33px"/>
+                                        <img border="0" src="http://image.free.in.th/v/2013/it/211103091247.jpg" style="width:33px; height: 33px"/>
+                                        <img border="0" src="http://image.free.in.th/v/2013/it/211103091247.jpg" style="width:33px; height: 33px"/>
+                                        <img border="0" src="http://image.free.in.th/v/2013/it/211103091247.jpg" style="width:33px; height: 33px"/>
+                                        <img border="0" src="http://image.free.in.th/v/2013/it/211103091247.jpg" style="width:33px; height: 33px"/>
+                                        <img border="0" src="http://image.free.in.th/v/2013/it/211103091247.jpg" style="width:33px; height: 33px"/>
+                                    </label>
+                                </td>
+                                <td class="light  color-white bg-red" width="7%">C</td>
+                            </tr>
+
+                            <tr style="height: 80px;">
+                                <td class="right color-white bg-red" width="7%">D</td>
+                                <td class="center">
+                                    <label>
+                                        <img border="0" src="http://image.free.in.th/v/2013/ia/211103091536.jpg" style="width:36px; height: 36px"/>
+                                        <img border="0" src="http://image.free.in.th/v/2013/ia/211103091536.jpg" style="width:36px; height: 36px"/>
+                                        <img border="0" src="http://image.free.in.th/v/2013/ia/211103091536.jpg" style="width:36px; height: 36px"/>
+                                        <img border="0" src="http://image.free.in.th/v/2013/ia/211103091536.jpg" style="width:36px; height: 36px"/>
+                                        <img border="0" src="http://image.free.in.th/v/2013/ia/211103091536.jpg" style="width:36px; height: 36px"/>
+                                        <img border="0" src="http://image.free.in.th/v/2013/ia/211103091536.jpg" style="width:36px; height: 36px"/>
+                                        <img border="0" src="http://image.free.in.th/v/2013/ia/211103091536.jpg" style="width:36px; height: 36px"/>
+                                        <img border="0" src="http://image.free.in.th/v/2013/ia/211103091536.jpg" style="width:36px; height: 36px"/>
+
+
+                                    </label>
+                                </td>
+                                <td class="light  color-white bg-red" width="7%">D</td>
+                            </tr>
+                        </table>
+                        </br>
+                        </br>
+                        </br>
+                        </br>
+
+                        <img border="0" src="http://image.free.in.th/v/2013/im/211102103815.jpg" style="width:35px; height: 35px; margin-bottom:8px; margin-left:40px;"/>
+                        <p style="color:white; margin-left:90px; margin-top:-38px;">Normal Seat &nbsp; 160 บาท</p></br>
+                        <img border="0" src="http://image.free.in.th/v/2013/it/211103091247.jpg" style="width:33px; height: 33px; margin-bottom:8px; margin-left:40px;"/>
+                        <p style="color:white; margin-left:90px; margin-top:-38px;">Honeymoon Seat &nbsp; 220 บาท</p></br>
+                        <img border="0" src="http://image.free.in.th/v/2013/ia/211103091536.jpg" style="width:36px; height: 36px; margin-bottom:8px; margin-left:40px;"/>
+                        <p style="color:white; margin-left:90px; margin-top:-38px;">Honeymoon twin Seat &nbsp; 700 บาท/คู่</p></br>
+                        </br>
+                        </br>
+                        </br>
+                    </div>
+
+
+
+
+                </div>
+            </div>
         </div>
+
+    <div class="col-3" style="margin-left:66em; border-radius: 1.5em; border: solid 1px #F21137; position:fixed;">
+        <h3 style="text-align:center;">สรุปยอด</h3>
+        <p> เรื่องย่อ </p>
+        <p> เรื่องย่อ </p>
+        <p> เรื่องย่อ </p>
+        <p> เรื่องย่อ </p>
+        <p> เรื่องย่อ </p>
+        <p> เรื่องย่อ </p>
+        <p> เรื่องย่อ </p>
     </div>
-</div>
+    </div>
+    </div>
+
+
+
 
 
 
@@ -67,37 +459,48 @@
 </body>
 <style>
 
+    img{
+        margin-left : 4px;
+        margin-right : 12px;
+    }
+
+    td{
+        text-align: center;
+        color: white;
+    }
 
     div{
         font-family:'Noto Sans Thai', sans-serif;
     }
 
     .img-thumbnail{
-        width: 250px;
+        width: 270px;
         height: 350px;
-        margin-left: 2em;
+
 
     }
 
     h3{
 
         font-family:'Noto Sans Thai', sans-serif;
-        padding-top: 8em;
+        padding-top: 2em;
     }
 
     h6{
         font-family:'Noto Sans Thai', sans-serif;
     }
 
-    .col-md-auto{
+    .col-8, .col-3{
         margin-top: 10em;
-        margin-bottom: 10em;
+        margin-bottom: 8em;
+
     }
 
-        #perimetercinemas-tab, #bkcinemas-tab, #perimeterscinemas-tab{
+    #bkcinemas-tab, #bkcinemas-seattab{
         font-size: 22px;
         margin-bottom: 50px;
     }
+
 
     .nav {
         display: -ms-flexbox;
@@ -135,7 +538,7 @@
     }
 
 
-    ul#cinemas-tab {
+    ul#cinemas-tab, #bkcinemas-seattab{
         align-items: center;
         justify-content: center;
     }
@@ -156,14 +559,13 @@
       text-align: -webkit-match-parent;
     }
 
-    h5{
-      padding-bottom: 3em;
-      margin-bottom: 3em;
-      border-bottom: solid 1px #494949;
-      margin-left: 10em;
-      padding-left: 3em;
-      margin-right: 10em;
-      margin-top: 4em;
+
+
+    h4{
+        margin-top: 1em;
+        margin-left: 1em;
     }
+
+
 </style>
 </html>
