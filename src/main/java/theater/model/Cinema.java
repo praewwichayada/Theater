@@ -19,7 +19,6 @@ public class Cinema {
     private String number;
     private String type;
     private int seats;
-    private int remainingSeats;
 
     public UUID getId() {
         return id;
@@ -51,13 +50,5 @@ public class Cinema {
 
     public void setSeats(int seats) {
         this.seats = seats;
-    }
-
-    public int getRemainingSeats() {
-        return remainingSeats;
-    }
-
-    public void setRemainingSeats(int remainingSeats) {
-        this.remainingSeats = remainingSeats;
     }
 }

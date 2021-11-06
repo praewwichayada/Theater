@@ -16,8 +16,7 @@ public class Ticket {
     @Column(columnDefinition = "CHAR(36)")
     private UUID id;
 
-    private UUID movieID;
-    private UUID cinemaID;
+    private UUID showTimeID;
     private String email;
     private String seat;
 
@@ -29,20 +28,12 @@ public class Ticket {
         this.id = id;
     }
 
-    public UUID getMovieID() {
-        return movieID;
+    public UUID getShowTimeID() {
+        return showTimeID;
     }
 
-    public void setMovieID(UUID movieID) {
-        this.movieID = movieID;
-    }
-
-    public UUID getCinemaID() {
-        return cinemaID;
-    }
-
-    public void setCinemaID(UUID cinemaID) {
-        this.cinemaID = cinemaID;
+    public void setShowTimeID(UUID showTimeID) {
+        this.showTimeID = showTimeID;
     }
 
     public String getEmail() {

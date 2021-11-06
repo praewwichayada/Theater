@@ -41,10 +41,6 @@ public class CinemaService {
             record.setSeats(requestBody.getSeats());
         }
 
-        if(requestBody.getRemainingSeats() > 0){
-            record.setRemainingSeats(requestBody.getRemainingSeats());
-        }
-
         Cinema restaurant = cinemaRepository.save(record);
 
         return restaurant;
