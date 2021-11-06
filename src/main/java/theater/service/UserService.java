@@ -16,7 +16,7 @@ public class UserService {
         return userRepository.findAll();
     }
 
-    public User getMovie(String email){
+    public User getUser(String email){
         return userRepository.findById(email).get();
     }
 
