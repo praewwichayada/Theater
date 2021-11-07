@@ -16,6 +16,7 @@ public class Movie {
     @Column(columnDefinition = "CHAR(36)")
     private UUID id;
 
+    private String name;
     private String image;
     private String trailer;
     private String description;
@@ -28,6 +29,14 @@ public class Movie {
 
     public void setId(UUID id) {
         this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getImage() {

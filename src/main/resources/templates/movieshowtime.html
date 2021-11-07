@@ -28,15 +28,13 @@
         <div class="col-8" style="margin-left:3em">
             <div class="row">
         <div class="col" style="margin-left:4em; margin-bottom:7em;">
-            <img src="https://images.thaiza.com/235/235_20180410115425..jpg" class="img-thumbnail" alt="...">
+            <img src="${movieImage}" class="img-thumbnail" alt="...">
         </div>
-        <div class="col" style="margin-right:11em;">
-            <h3>อเวนเจอร์ อินฟินิตี้วอล</h3>
-            <h6> แอ็คชั่น </h6>
-            <h6> 120 นาที</h6>
-            <p> เรื่องย่อ </p>
-            <p>    xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx </p>
-            <p>    xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx </p>
+        <div class="col" style="margin-right:35em;">
+            <h3 th:text="${movieName}"></h3>
+            <h6 th:text="${moviePeriod}"></h6>
+            <p>เรื่องย่อ</p>
+            <p th:text="${movieDescription}"></p>
         </div>
             </div>
             <div class="box-all-cinemas">
