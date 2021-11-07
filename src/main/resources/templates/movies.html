@@ -37,22 +37,12 @@
 </ul>
 
 <div class="tab-content" id="pills-tab-content">
-  <div class="tab-pane fade active show" id="movie-showing" role="tabpanel" aria-labelledby="showing-tab">
-    <a th:href="@{/movieshowtime}"><img src="https://images.thaiza.com/235/235_20180410115425..jpg" class="img-thumbnail" alt=""></a>
-    <a th:href="@{/movieshowtime}"><img src="https://f.ptcdn.info/130/022/000/1407484709-1052433267-o.jpg" class="img-thumbnail" alt="..."></a>
-    <a th:href="@{/movieshowtime}"><img src="https://terrigen-cdn-dev.marvel.com/content/prod/1x/theavengers_lob_crd_03.jpg" class="img-thumbnail" alt="..."></a>
-    <a th:href="@{/movieshowtime}"><img src="https://images.thaiza.com/235/235_20180410115425..jpg" class="img-thumbnail" alt="..."></a>
-    <a th:href="@{/movieshowtime}"><img src="https://f.ptcdn.info/130/022/000/1407484709-1052433267-o.jpg" class="img-thumbnail" alt="..."></a>
-    <a th:href="@{/movieshowtime}"><img src="https://terrigen-cdn-dev.marvel.com/content/prod/1x/theavengers_lob_crd_03.jpg" class="img-thumbnail" alt="..."></a>
+  <div th:each="movie : ${moviesOnAir}" class="tab-pane fade active show" id="movie-showing" role="tabpanel" aria-labelledby="showing-tab">
+    <a th:href="${movie.id}"><img th:src="@{${movie.image}}" class="img-thumbnail" alt="..."></a>
   </div>
 
-  <div class="tab-pane fade" id="movie-coming" role="tabpanel" aria-labelledby="coming-tab">
-    <a th:href="@{/movieshowtime}"><img src="https://images.thaiza.com/235/235_20180410115425..jpg" class="img-thumbnail" alt=""></a>
-    <a th:href="@{/movieshowtime}"><img src="https://f.ptcdn.info/130/022/000/1407484709-1052433267-o.jpg" class="img-thumbnail" alt="..."></a>
-    <a th:href="@{/movieshowtime}"><img src="https://terrigen-cdn-dev.marvel.com/content/prod/1x/theavengers_lob_crd_03.jpg" class="img-thumbnail" alt="..."></a>
-    <a th:href="@{/movieshowtime}"><img src="https://images.thaiza.com/235/235_20180410115425..jpg" class="img-thumbnail" alt="..."></a>
-    <a th:href="@{/movieshowtime}"><img src="https://f.ptcdn.info/130/022/000/1407484709-1052433267-o.jpg" class="img-thumbnail" alt="..."></a>
-    <a th:href="@{/movieshowtime}"><img src="https://terrigen-cdn-dev.marvel.com/content/prod/1x/theavengers_lob_crd_03.jpg" class="img-thumbnail" alt="..."></a>
+  <div th:each="movie : ${moviesComingSoon}" class="tab-pane fade" id="movie-coming" role="tabpanel" aria-labelledby="coming-tab">
+    <a th:href="${movie.id}"><img th:src="@{${movie.image}}" class="img-thumbnail" alt="..."></a>
   </div>
 </div>
 </div>

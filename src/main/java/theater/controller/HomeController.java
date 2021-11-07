@@ -7,8 +7,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import theater.model.Movie;
 import theater.service.MovieService;
 
-import java.net.MalformedURLException;
-import java.net.URL;
+import java.util.ArrayList;
 import java.util.List;
 
 @Controller
@@ -17,16 +16,22 @@ public class HomeController {
     MovieService movieService;
 
     @RequestMapping("/")
-    public String getHomePage(Model model) throws MalformedURLException {
+    public String getHomePage(Model model){
         List<Movie> movies = movieService.getALl();
-        model.addAttribute("movie1", new URL(movies.get(0).getImage()));
+        List<Movie> moviesOnAir = new ArrayList<>();
+        List<Movie> moviesComingSoon = new ArrayList<>();
+
+        for(Movie m : movies){
+            if(m.getStatus().equals("on air")){
+                moviesOnAir.add(m);
+            }else{
+                moviesComingSoon.add(m);
+            }
+        }
+
+        model.addAttribute("moviesOnAir", moviesOnAir);
+        model.addAttribute("moviesComingSoon", moviesComingSoon);
         return "home";
     }
-
-    @RequestMapping("/movies")
-    public String getMoviesPage() {
-        return "movies";
-    }
-
 }
 

@@ -4,6 +4,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.server.PathContainer;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import theater.model.Movie;
 import theater.service.MovieService;
@@ -19,13 +21,9 @@ public class MovieShowtimeController {
     @Autowired
     MovieService movieService;
 
-    @RequestMapping("/movieshowtime")
-    public String getMovieShowtimePage(Model model) throws MalformedURLException {
-        Movie movie = movieService.getMovie(UUID.fromString("1266887f-426e-47ec-807d-bc68be429e65"));
-        model.addAttribute("movieImage", new URL(movie.getImage()));
-        model.addAttribute("movieName", movie.getName());
-        model.addAttribute("moviePeriod", movie.getPeriod() + " นาที");
-        model.addAttribute("movieDescription", movie.getDescription());
+    @RequestMapping("/{id}")
+    public String getMovieShowtimePage(@PathVariable UUID id,Model model){
+        model.addAttribute("movie", movieService.getMovie(id));
         return "movieshowtime";
     }
 }
