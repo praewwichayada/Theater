@@ -14,7 +14,7 @@ public class MovieShowtimeController {
     @Autowired
     MovieService movieService;
 
-    @RequestMapping("/{id}")
+    @RequestMapping("movies/{id}")
     public String getMovieShowtimePage(@PathVariable UUID id,Model model){
         model.addAttribute("movie", movieService.getMovie(id));
         return "movieshowtime";

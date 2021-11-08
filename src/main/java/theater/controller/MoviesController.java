@@ -1,6 +1,7 @@
 package theater.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import theater.model.Movie;
@@ -9,9 +10,7 @@ import theater.service.MovieService;
 import java.util.ArrayList;
 import java.util.List;
 
-
-@RestController
-@RequestMapping("/MovieManagement")
+@Controller
 public class MoviesController {
     @Autowired
     MovieService movieService;

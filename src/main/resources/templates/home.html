@@ -25,12 +25,12 @@
 
     <h4>กำลังฉาย</h4>
     <tr th:each="movie : ${moviesOnAir}">
-        <a th:href="${movie.id}"><img th:src="@{${movie.image}}" class="img-thumbnail" alt="..."></a>
+        <a th:href="@{${'/movies/' + movie.id}}"><img th:src="@{${movie.image}}" class="img-thumbnail" alt="..."></a>
     </tr>
 
     <h4>โปรแกรมหน้า</h4>
     <tr th:each="movie : ${moviesComingSoon}">
-        <a th:href="${movie.id}"><img th:src="@{${movie.image}}" class="img-thumbnail" alt="..."></a>
+        <a th:href="@{${'/movies/' + movie.id}}"><img th:src="@{${movie.image}}" class="img-thumbnail" alt="..."></a>
     </tr>
 
     <footer>

@@ -42,11 +42,5 @@ public class HomeController {
 
         return "home";
     }
-
-    @RequestMapping("/movies")
-    public String getMoviesPage() {
-        return "movies";
-    }
-
 }
 

@@ -38,11 +38,11 @@
 
 <div class="tab-content" id="pills-tab-content">
   <div th:each="movie : ${moviesOnAir}" class="tab-pane fade active show" id="movie-showing" role="tabpanel" aria-labelledby="showing-tab">
-    <a th:href="${movie.id}"><img th:src="@{${movie.image}}" class="img-thumbnail" alt="..."></a>
+    <a th:href="@{${'/movies/' + movie.id}}"><img th:src="@{${movie.image}}" class="img-thumbnail" alt="..."></a>
   </div>
 
   <div th:each="movie : ${moviesComingSoon}" class="tab-pane fade" id="movie-coming" role="tabpanel" aria-labelledby="coming-tab">
-    <a th:href="${movie.id}"><img th:src="@{${movie.image}}" class="img-thumbnail" alt="..."></a>
+    <a th:href="@{${'/movies/' + movie.id}}"><img th:src="@{${movie.image}}" class="img-thumbnail" alt="..."></a>
   </div>
 </div>
 </div>
