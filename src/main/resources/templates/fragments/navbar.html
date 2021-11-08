@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<html lang="en" xmlns:th="https://www.thymeleaf.org" xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport"
@@ -32,33 +32,47 @@
     </form>
 
     <a class="nav-link active" aria-current="page" id="changelanguage" href="#">EN/TH</a>
-    <button class="btn btn-outline-danger" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
-      เข้าสู่ระบบ
-    </button>
-  </ul>
-  <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
-    <div class="offcanvas-header">
-      <h5 class="offcanvas-title" id="offcanvasNavbarLabel">เข้าสู่ระบบ</h5>
-      <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+
+    <div sec:authorize="isAuthenticated()">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="btn btn-outline-danger" th:href="@{/logout}">ออกจากระบบ</a>
+        </li>
+      </ul>
     </div>
-    <form id="formforlogin">
-      <div class="col-md-10">
-        <label for="exampleInputEmail1" class="form-label">อีเมล</label>
-        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
 
-      </div>
-      <div class="col-md-10">
-        <label for="exampleInputPassword1" class="form-label">รหัสผ่าน</label>
-        <input type="password" class="form-control" id="exampleInputPassword1">
-      </div>
+    <div sec:authorize="isAnonymous()">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="btn btn-outline-danger" th:href="@{/oauth2/authorization/google}">เข้าสู่ระบบ</a>
+        </li>
+      </ul>
+    </div>
+  </ul>
 
-      <button type="submit" class="btn btn-danger" id="submitbutton">เข้าสู่ระบบ</button><br/><br/>
+<!--  <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">-->
+<!--    <div class="offcanvas-header">-->
+<!--      <h5 class="offcanvas-title" id="offcanvasNavbarLabel">เข้าสู่ระบบ</h5>-->
+<!--      <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>-->
+<!--    </div>-->
+<!--    <form id="formforlogin">-->
+<!--      <div class="col-md-10">-->
+<!--        <label for="exampleInputEmail1" class="form-label">อีเมล</label>-->
+<!--        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">-->
 
-      <a class="navbar-link" th:href="@{/register}" id="createregister">หรือ สร้างบัญชีใหม่</a>
+<!--      </div>-->
+<!--      <div class="col-md-10">-->
+<!--        <label for="exampleInputPassword1" class="form-label">รหัสผ่าน</label>-->
+<!--        <input type="password" class="form-control" id="exampleInputPassword1">-->
+<!--      </div>-->
 
-    </form>
+<!--      <button type="submit" class="btn btn-danger" id="submitbutton">เข้าสู่ระบบ</button><br/><br/>-->
 
-  </div>
+<!--      <a class="navbar-link" th:href="@{/register}" id="createregister">หรือ สร้างบัญชีใหม่</a>-->
+
+<!--    </form>-->
+
+<!--  </div>-->
 
 </nav>
 
