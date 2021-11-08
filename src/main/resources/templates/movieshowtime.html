@@ -13,6 +13,31 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai&display=swap" rel="stylesheet">
 
+
+<script>
+       function img(item){
+         if(item.src == "http://image.free.in.th/v/2013/it/211103091247.jpg"){
+          item.src = "http://image.free.in.th/v/2013/iq/211103013237.png";
+        }
+        else{
+            item.src = "http://image.free.in.th/v/2013/it/211103091247.jpg";
+        }
+
+    }
+</script>
+
+ <script>
+       var seat = [];
+       function getID(id){
+         seat.push(document.getElementById("seat").innerHTML = id);
+         document.getElementById("seat").innerHTML = seat;
+    }
+
+});
+</script>
+
+
+
 </head>
 <body style="background-color:white;">
 
@@ -30,9 +55,10 @@
         <div class="col" style="margin-left:4em; margin-bottom:7em;">
             <img th:src="@{${movie.image}}" class="img-thumbnail" alt="...">
         </div>
-        <div class="col" style="margin-right:35em;">
+        <div class="col" style="margin-right:20em;">
             <h3 th:text="${movie.name}"></h3>
-            <h6 th:text="${movie.period}"></h6>
+            <span th:text="${movie.period}"></span>
+            <span>นาที</span>
             <p>เรื่องย่อ</p>
             <p th:text="${movie.description}"></p>
         </div>
@@ -149,75 +175,100 @@
                         <img border="0" src="http://image.free.in.th/v/2013/id/211102112448.jpg" style="margin-left:160px; width:620px; height: 80px; margin-bottom:70px; margin-top:70px;"/>
                         <table class="center data" width="60%" style="margin-left:190px;">
                             <tr style="height: 80px; border-color:#1e1e20;">
-                                <td class="right color-white bg-red" width="10%">A</td>
+                                <td class="right color-white bg-red" width="10%">D</td>
+<!--                                @foreach($i = )-->
                                 <td class="center">
                                     <label>
-                                        <!--                                        <a href="http://picture.in.th/id/ddcfed5efc6ddca742e6860c64a8ab3a"  target="_blank"><img border="0" src="http://image.free.in.th/v/2013/iq/211103013237.png" alt="images by free.in.th" /></a>-->
-                                        <img border="0" src="http://image.free.in.th/v/2013/im/211102103815.jpg" style="width:35px; height: 35px"/>
-                                        <img border="0" src="http://image.free.in.th/v/2013/im/211102103815.jpg" style="width:35px; height: 35px"/>
-                                        <img border="0" src="http://image.free.in.th/v/2013/im/211102103815.jpg" style="width:35px; height: 35px"/>
-                                        <img border="0" src="http://image.free.in.th/v/2013/im/211102103815.jpg" style="width:35px; height: 35px"/>
-                                        <img border="0" src="http://image.free.in.th/v/2013/im/211102103815.jpg" style="width:35px; height: 35px"/>
-                                        <img border="0" src="http://image.free.in.th/v/2013/im/211102103815.jpg" style="width:35px; height: 35px"/>
-                                        <img border="0" src="http://image.free.in.th/v/2013/im/211102103815.jpg" style="width:35px; height: 35px"/>
-                                        <img border="0" src="http://image.free.in.th/v/2013/im/211102103815.jpg" style="width:35px; height: 35px"/>
+
+                                        <button type="button" id="D1" onclick="getID(this.id)" style="width:33px; height: 33px; background-color: Transparent; background-repeat:no-repeat; border: none; cursor:pointer; overflow: hidden;">
+                                            <img src="http://image.free.in.th/v/2013/it/211103091247.jpg" onclick="img(this);"  style="width:30px; height: 30px; margin-right:10em;"/></button>
+                                        <button type="button" id="D2" onclick="getID(this.id)" style="width:33px; height: 33px; background-color: Transparent; background-repeat:no-repeat; border: none; cursor:pointer; overflow: hidden;">
+                                            <img src="http://image.free.in.th/v/2013/it/211103091247.jpg" onclick="img(this);"  style="width:30px; height: 30px; margin-right:10em;"/></button>
+                                        <button type="button" id="D3" onclick="getID(this.id)" style="width:33px; height: 33px; background-color: Transparent; background-repeat:no-repeat; border: none; cursor:pointer; overflow: hidden;">
+                                            <img src="http://image.free.in.th/v/2013/it/211103091247.jpg" onclick="img(this);"  style="width:30px; height: 30px; margin-right:10em;"/></button>
+                                        <button type="button" id="D4" onclick="getID(this.id)" style="width:33px; height: 33px; background-color: Transparent; background-repeat:no-repeat; border: none; cursor:pointer; overflow: hidden;">
+                                            <img src="http://image.free.in.th/v/2013/it/211103091247.jpg" onclick="img(this);"  style="width:30px; height: 30px; margin-right:10em;"/></button>
+                                        <button type="button" id="D5" onclick="getID(this.id)" style="width:33px; height: 33px; background-color: Transparent; background-repeat:no-repeat; border: none; cursor:pointer; overflow: hidden;">
+                                            <img src="http://image.free.in.th/v/2013/it/211103091247.jpg" onclick="img(this);"  style="width:30px; height: 30px; margin-right:10em;"/></button>
+                                        <button type="button" id="D6" onclick="getID(this.id)" style="width:33px; height: 33px; background-color: Transparent; background-repeat:no-repeat; border: none; cursor:pointer; overflow: hidden;">
+                                            <img src="http://image.free.in.th/v/2013/it/211103091247.jpg" onclick="img(this);"  style="width:30px; height: 30px; margin-right:10em;"/></button>
+                                        <button type="button" id="D7" onclick="getID(this.id)" style="width:33px; height: 33px; background-color: Transparent; background-repeat:no-repeat; border: none; cursor:pointer; overflow: hidden;">
+                                            <img src="http://image.free.in.th/v/2013/it/211103091247.jpg" onclick="img(this);"  style="width:30px; height: 30px; margin-right:10em;"/></button>
+                                        <button type="button" id="D8" onclick="getID(this.id)" style="width:33px; height: 33px; background-color: Transparent; background-repeat:no-repeat; border: none; cursor:pointer; overflow: hidden;">
+                                            <img src="http://image.free.in.th/v/2013/it/211103091247.jpg" onclick="img(this);"  style="width:30px; height: 30px; margin-right:10em;"/></button>
                                     </label>
                                 </td>
-                                <td class="light  color-white bg-red" width="10%">A</td>
-                            </tr>
-
-                            <tr style="height: 80px;">
-                                <td class="right color-white bg-red" width="7%">B</td>
-                                <td class="center">
-                                    <label>
-                                        <img border="0" src="http://image.free.in.th/v/2013/im/211102103815.jpg" style="width:35px; height: 35px"/>
-                                        <img border="0" src="http://image.free.in.th/v/2013/im/211102103815.jpg" style="width:35px; height: 35px"/>
-                                        <img border="0" src="http://image.free.in.th/v/2013/im/211102103815.jpg" style="width:35px; height: 35px"/>
-                                        <img border="0" src="http://image.free.in.th/v/2013/im/211102103815.jpg" style="width:35px; height: 35px"/>
-                                        <img border="0" src="http://image.free.in.th/v/2013/im/211102103815.jpg" style="width:35px; height: 35px"/>
-                                        <img border="0" src="http://image.free.in.th/v/2013/im/211102103815.jpg" style="width:35px; height: 35px"/>
-                                        <img border="0" src="http://image.free.in.th/v/2013/im/211102103815.jpg" style="width:35px; height: 35px"/>
-                                        <img border="0" src="http://image.free.in.th/v/2013/im/211102103815.jpg" style="width:35px; height: 35px"/>
-
-                                    </label>
-                                </td>
-                                <td class="light  color-white bg-red" width="7%">B</td>
+                                <td class="light  color-white bg-red" width="10%">D</td>
                             </tr>
 
                             <tr style="height: 80px;">
                                 <td class="right color-white bg-red" width="7%">C</td>
                                 <td class="center">
                                     <label>
-                                        <img border="0" src="http://image.free.in.th/v/2013/it/211103091247.jpg" style="width:33px; height: 33px"/>
-                                        <img border="0" src="http://image.free.in.th/v/2013/it/211103091247.jpg" style="width:33px; height: 33px"/>
-                                        <img border="0" src="http://image.free.in.th/v/2013/it/211103091247.jpg" style="width:33px; height: 33px"/>
-                                        <img border="0" src="http://image.free.in.th/v/2013/it/211103091247.jpg" style="width:33px; height: 33px"/>
-                                        <img border="0" src="http://image.free.in.th/v/2013/it/211103091247.jpg" style="width:33px; height: 33px"/>
-                                        <img border="0" src="http://image.free.in.th/v/2013/it/211103091247.jpg" style="width:33px; height: 33px"/>
-                                        <img border="0" src="http://image.free.in.th/v/2013/it/211103091247.jpg" style="width:33px; height: 33px"/>
-                                        <img border="0" src="http://image.free.in.th/v/2013/it/211103091247.jpg" style="width:33px; height: 33px"/>
+                                        <button type="button" style="width:33px; height: 33px; background-color: Transparent; background-repeat:no-repeat; border: none; cursor:pointer; overflow: hidden;">
+                                            <img src="http://image.free.in.th/v/2013/it/211103091247.jpg" style="width:30px; height: 30px; margin-right:10em;"/></button>
+                                        <button type="button" style="width:33px; height: 33px; background-color: Transparent; background-repeat:no-repeat; border: none; cursor:pointer; overflow: hidden;">
+                                            <img src="http://image.free.in.th/v/2013/it/211103091247.jpg" style="width:30px; height: 30px; margin-right:10em;"/></button>
+                                        <button type="button" style="width:33px; height: 33px; background-color: Transparent; background-repeat:no-repeat; border: none; cursor:pointer; overflow: hidden;">
+                                            <img src="http://image.free.in.th/v/2013/it/211103091247.jpg" style="width:30px; height: 30px; margin-right:10em;"/></button>
+                                        <button type="button" style="width:33px; height: 33px; background-color: Transparent; background-repeat:no-repeat; border: none; cursor:pointer; overflow: hidden;">
+                                            <img src="http://image.free.in.th/v/2013/it/211103091247.jpg" style="width:30px; height: 30px; margin-right:10em;"/></button>
+                                        <button type="button" style="width:33px; height: 33px; background-color: Transparent; background-repeat:no-repeat; border: none; cursor:pointer; overflow: hidden;">
+                                            <img src="http://image.free.in.th/v/2013/it/211103091247.jpg" style="width:30px; height: 30px; margin-right:10em;"/></button>
+                                        <button type="button" style="width:33px; height: 33px; background-color: Transparent; background-repeat:no-repeat; border: none; cursor:pointer; overflow: hidden;">
+                                            <img src="http://image.free.in.th/v/2013/it/211103091247.jpg" style="width:30px; height: 30px; margin-right:10em;"/></button>
+                                        <button type="button" style="width:33px; height: 33px; background-color: Transparent; background-repeat:no-repeat; border: none; cursor:pointer; overflow: hidden;">
+                                            <img src="http://image.free.in.th/v/2013/it/211103091247.jpg" style="width:30px; height: 30px; margin-right:10em;"/></button>
+                                        <button type="button" style="width:33px; height: 33px; background-color: Transparent; background-repeat:no-repeat; border: none; cursor:pointer; overflow: hidden;">
+                                            <img src="http://image.free.in.th/v/2013/it/211103091247.jpg" style="width:30px; height: 30px; margin-right:10em;"/></button>
                                     </label>
                                 </td>
                                 <td class="light  color-white bg-red" width="7%">C</td>
                             </tr>
 
                             <tr style="height: 80px;">
-                                <td class="right color-white bg-red" width="7%">D</td>
+                                <td class="right color-white bg-red" width="7%">B</td>
                                 <td class="center">
                                     <label>
-                                        <img border="0" src="http://image.free.in.th/v/2013/ia/211103091536.jpg" style="width:36px; height: 36px"/>
-                                        <img border="0" src="http://image.free.in.th/v/2013/ia/211103091536.jpg" style="width:36px; height: 36px"/>
-                                        &nbsp;
-                                        <img border="0" src="http://image.free.in.th/v/2013/ia/211103091536.jpg" style="width:36px; height: 36px"/>
-                                        <img border="0" src="http://image.free.in.th/v/2013/ia/211103091536.jpg" style="width:36px; height: 36px"/>
-                                        &nbsp;
-                                        <img border="0" src="http://image.free.in.th/v/2013/ia/211103091536.jpg" style="width:36px; height: 36px"/>
-                                        <img border="0" src="http://image.free.in.th/v/2013/ia/211103091536.jpg" style="width:36px; height: 36px"/>
+                                        <button type="button" style="width:33px; height: 33px; background-color: Transparent; background-repeat:no-repeat; border: none; cursor:pointer; overflow: hidden;">
+                                            <img src="http://image.free.in.th/v/2013/it/211103091247.jpg" style="width:30px; height: 30px; margin-right:10em;"/></button>
+                                        <button type="button" style="width:33px; height: 33px; background-color: Transparent; background-repeat:no-repeat; border: none; cursor:pointer; overflow: hidden;">
+                                            <img src="http://image.free.in.th/v/2013/it/211103091247.jpg" style="width:30px; height: 30px; margin-right:10em;"/></button>
+                                        <button type="button" style="width:33px; height: 33px; background-color: Transparent; background-repeat:no-repeat; border: none; cursor:pointer; overflow: hidden;">
+                                            <img src="http://image.free.in.th/v/2013/it/211103091247.jpg" style="width:30px; height: 30px; margin-right:10em;"/></button>
+                                        <button type="button" style="width:33px; height: 33px; background-color: Transparent; background-repeat:no-repeat; border: none; cursor:pointer; overflow: hidden;">
+                                            <img src="http://image.free.in.th/v/2013/it/211103091247.jpg" style="width:30px; height: 30px; margin-right:10em;"/></button>
+                                        <button type="button" style="width:33px; height: 33px; background-color: Transparent; background-repeat:no-repeat; border: none; cursor:pointer; overflow: hidden;">
+                                            <img src="http://image.free.in.th/v/2013/it/211103091247.jpg" style="width:30px; height: 30px; margin-right:10em;"/></button>
+                                        <button type="button" style="width:33px; height: 33px; background-color: Transparent; background-repeat:no-repeat; border: none; cursor:pointer; overflow: hidden;">
+                                            <img src="http://image.free.in.th/v/2013/it/211103091247.jpg" style="width:30px; height: 30px; margin-right:10em;"/></button>
+                                        <button type="button" style="width:33px; height: 33px; background-color: Transparent; background-repeat:no-repeat; border: none; cursor:pointer; overflow: hidden;">
+                                            <img src="http://image.free.in.th/v/2013/it/211103091247.jpg" style="width:30px; height: 30px; margin-right:10em;"/></button>
+                                        <button type="button" style="width:33px; height: 33px; background-color: Transparent; background-repeat:no-repeat; border: none; cursor:pointer; overflow: hidden;">
+                                            <img src="http://image.free.in.th/v/2013/it/211103091247.jpg" style="width:30px; height: 30px; margin-right:10em;"/></button>
+                                    </label>
+                                </td>
+                                <td class="light  color-white bg-red" width="7%">B</td>
+                            </tr>
+
+                            <tr style="height: 80px;">
+                                <td class="right color-white bg-red" width="7%">A</td>
+                                <td class="center">
+                                    <label>
+                                        <button type="button" style="width:33px; height: 33px; background-color: Transparent; background-repeat:no-repeat; border: none; cursor:pointer; overflow: hidden;">
+                                            <img src="http://image.free.in.th/v/2013/it/211103091247.jpg" style="width:30px; height: 30px; margin-right:10em;"/></button>
+                                        <button type="button" style="width:33px; height: 33px; background-color: Transparent; background-repeat:no-repeat; border: none; cursor:pointer; overflow: hidden;">
+                                            <img src="http://image.free.in.th/v/2013/it/211103091247.jpg" style="width:30px; height: 30px; margin-right:10em;"/></button>
+
+                                        <button type="button" style="width:33px; height: 33px; background-color: Transparent; background-repeat:no-repeat; border: none; cursor:pointer; overflow: hidden;">
+                                            <img src="http://image.free.in.th/v/2013/it/211103091247.jpg" style="width:30px; height: 30px; margin-right:10em;"/></button>
+                                        <button type="button" style="width:33px; height: 33px; background-color: Transparent; background-repeat:no-repeat; border: none; cursor:pointer; overflow: hidden;">
+                                            <img src="http://image.free.in.th/v/2013/it/211103091247.jpg" style="width:30px; height: 30px; margin-right:10em;"/></button>
 
 
                                     </label>
                                 </td>
-                                <td class="light  color-white bg-red" width="7%">D</td>
+                                <td class="light  color-white bg-red" width="7%">A</td>
                             </tr>
                         </table>
                         </br>
@@ -225,12 +276,9 @@
                         </br>
                         </br>
 
-                        <img border="0" src="http://image.free.in.th/v/2013/im/211102103815.jpg" style="width:35px; height: 35px; margin-bottom:8px; margin-left:40px;"/>
-                        <p style="color:white; margin-left:90px; margin-top:-38px;">Normal Seat &nbsp; 260 บาท</p></br>
                         <img border="0" src="http://image.free.in.th/v/2013/it/211103091247.jpg" style="width:33px; height: 33px; margin-bottom:8px; margin-left:40px;"/>
-                        <p style="color:white; margin-left:90px; margin-top:-38px;">Honeymoon Seat &nbsp; 360 บาท</p></br>
-                        <img border="0" src="http://image.free.in.th/v/2013/ia/211103091536.jpg" style="width:36px; height: 36px; margin-bottom:8px; margin-left:40px;"/>
-                        <p style="color:white; margin-left:90px; margin-top:-38px;">Honeymoon twin Seat &nbsp; 1000 บาท/คู่</p></br>
+                        <p style="color:white; margin-left:90px; margin-top:-38px;">Honeymoon Seat &nbsp; 320 บาท</p></br>
+
                         </br>
                         </br>
                         </br>
@@ -244,74 +292,97 @@
                         <img border="0" src="http://image.free.in.th/v/2013/id/211102112448.jpg" style="margin-left:160px; width:620px; height: 80px; margin-bottom:70px; margin-top:70px;"/>
                         <table class="center data" width="60%" style="margin-left:190px;">
                             <tr style="height: 80px; border-color:#1e1e20;">
-                                <td class="right color-white bg-red" width="10%">A</td>
+                                <td class="right color-white bg-red" width="10%">D</td>
                                 <td class="center">
                                     <label>
-                                        <img border="0" src="http://image.free.in.th/v/2013/im/211102103815.jpg" style="width:35px; height: 35px"/>
-                                        <img border="0" src="http://image.free.in.th/v/2013/im/211102103815.jpg" style="width:35px; height: 35px"/>
-                                        <img border="0" src="http://image.free.in.th/v/2013/im/211102103815.jpg" style="width:35px; height: 35px"/>
-                                        <img border="0" src="http://image.free.in.th/v/2013/im/211102103815.jpg" style="width:35px; height: 35px"/>
-                                        <img border="0" src="http://image.free.in.th/v/2013/im/211102103815.jpg" style="width:35px; height: 35px"/>
-                                        <img border="0" src="http://image.free.in.th/v/2013/im/211102103815.jpg" style="width:35px; height: 35px"/>
-                                        <img border="0" src="http://image.free.in.th/v/2013/im/211102103815.jpg" style="width:35px; height: 35px"/>
-                                        <img border="0" src="http://image.free.in.th/v/2013/im/211102103815.jpg" style="width:35px; height: 35px"/>
+                                        <button type="button" style="width:33px; height: 33px; background-color: Transparent; background-repeat:no-repeat; border: none; cursor:pointer; overflow: hidden;">
+                                            <img src="http://image.free.in.th/v/2013/ia/211103091536.jpg" style="width:30px; height: 30px; margin-right:10em;"/></button>
+                                        <button type="button" style="width:33px; height: 33px; background-color: Transparent; background-repeat:no-repeat; border: none; cursor:pointer; overflow: hidden;">
+                                            <img src="http://image.free.in.th/v/2013/ia/211103091536.jpg" style="width:30px; height: 30px; margin-right:10em;"/></button>
+                                        <button type="button" style="width:33px; height: 33px; background-color: Transparent; background-repeat:no-repeat; border: none; cursor:pointer; overflow: hidden;">
+                                            <img src="http://image.free.in.th/v/2013/ia/211103091536.jpg" style="width:30px; height: 30px; margin-right:10em;"/></button>
+                                        <button type="button" style="width:33px; height: 33px; background-color: Transparent; background-repeat:no-repeat; border: none; cursor:pointer; overflow: hidden;">
+                                            <img src="http://image.free.in.th/v/2013/ia/211103091536.jpg" style="width:30px; height: 30px; margin-right:10em;"/></button>
+                                        <button type="button" style="width:33px; height: 33px; background-color: Transparent; background-repeat:no-repeat; border: none; cursor:pointer; overflow: hidden;">
+                                            <img src="http://image.free.in.th/v/2013/ia/211103091536.jpg" style="width:30px; height: 30px; margin-right:10em;"/></button>
+                                        <button type="button" style="width:33px; height: 33px; background-color: Transparent; background-repeat:no-repeat; border: none; cursor:pointer; overflow: hidden;">
+                                            <img src="http://image.free.in.th/v/2013/ia/211103091536.jpg" style="width:30px; height: 30px; margin-right:10em;"/></button>
+                                        <button type="button" style="width:33px; height: 33px; background-color: Transparent; background-repeat:no-repeat; border: none; cursor:pointer; overflow: hidden;">
+                                            <img src="http://image.free.in.th/v/2013/ia/211103091536.jpg" style="width:30px; height: 30px; margin-right:10em;"/></button>
+                                        <button type="button" style="width:33px; height: 33px; background-color: Transparent; background-repeat:no-repeat; border: none; cursor:pointer; overflow: hidden;">
+                                            <img src="http://image.free.in.th/v/2013/ia/211103091536.jpg" style="width:30px; height: 30px; margin-right:10em;"/></button>
                                     </label>
                                 </td>
-                                <td class="light  color-white bg-red" width="10%">A</td>
-                            </tr>
-
-                            <tr style="height: 80px;">
-                                <td class="right color-white bg-red" width="7%">B</td>
-                                <td class="center">
-                                    <label>
-                                        <img border="0" src="http://image.free.in.th/v/2013/im/211102103815.jpg" style="width:35px; height: 35px"/>
-                                        <img border="0" src="http://image.free.in.th/v/2013/im/211102103815.jpg" style="width:35px; height: 35px"/>
-                                        <img border="0" src="http://image.free.in.th/v/2013/im/211102103815.jpg" style="width:35px; height: 35px"/>
-                                        <img border="0" src="http://image.free.in.th/v/2013/im/211102103815.jpg" style="width:35px; height: 35px"/>
-                                        <img border="0" src="http://image.free.in.th/v/2013/im/211102103815.jpg" style="width:35px; height: 35px"/>
-                                        <img border="0" src="http://image.free.in.th/v/2013/im/211102103815.jpg" style="width:35px; height: 35px"/>
-                                        <img border="0" src="http://image.free.in.th/v/2013/im/211102103815.jpg" style="width:35px; height: 35px"/>
-                                        <img border="0" src="http://image.free.in.th/v/2013/im/211102103815.jpg" style="width:35px; height: 35px"/>
-
-                                    </label>
-                                </td>
-                                <td class="light  color-white bg-red" width="7%">B</td>
+                                <td class="light  color-white bg-red" width="10%">D</td>
                             </tr>
 
                             <tr style="height: 80px;">
                                 <td class="right color-white bg-red" width="7%">C</td>
                                 <td class="center">
                                     <label>
-                                        <img border="0" src="http://image.free.in.th/v/2013/it/211103091247.jpg" style="width:33px; height: 33px"/>
-                                        <img border="0" src="http://image.free.in.th/v/2013/it/211103091247.jpg" style="width:33px; height: 33px"/>
-                                        <img border="0" src="http://image.free.in.th/v/2013/it/211103091247.jpg" style="width:33px; height: 33px"/>
-                                        <img border="0" src="http://image.free.in.th/v/2013/it/211103091247.jpg" style="width:33px; height: 33px"/>
-                                        <img border="0" src="http://image.free.in.th/v/2013/it/211103091247.jpg" style="width:33px; height: 33px"/>
-                                        <img border="0" src="http://image.free.in.th/v/2013/it/211103091247.jpg" style="width:33px; height: 33px"/>
-                                        <img border="0" src="http://image.free.in.th/v/2013/it/211103091247.jpg" style="width:33px; height: 33px"/>
-                                        <img border="0" src="http://image.free.in.th/v/2013/it/211103091247.jpg" style="width:33px; height: 33px"/>
+                                        <button type="button" style="width:33px; height: 33px; background-color: Transparent; background-repeat:no-repeat; border: none; cursor:pointer; overflow: hidden;">
+                                            <img src="http://image.free.in.th/v/2013/ia/211103091536.jpg" style="width:30px; height: 30px; margin-right:10em;"/></button>
+                                        <button type="button" style="width:33px; height: 33px; background-color: Transparent; background-repeat:no-repeat; border: none; cursor:pointer; overflow: hidden;">
+                                            <img src="http://image.free.in.th/v/2013/ia/211103091536.jpg" style="width:30px; height: 30px; margin-right:10em;"/></button>
+                                        <button type="button" style="width:33px; height: 33px; background-color: Transparent; background-repeat:no-repeat; border: none; cursor:pointer; overflow: hidden;">
+                                            <img src="http://image.free.in.th/v/2013/ia/211103091536.jpg" style="width:30px; height: 30px; margin-right:10em;"/></button>
+                                        <button type="button" style="width:33px; height: 33px; background-color: Transparent; background-repeat:no-repeat; border: none; cursor:pointer; overflow: hidden;">
+                                            <img src="http://image.free.in.th/v/2013/ia/211103091536.jpg" style="width:30px; height: 30px; margin-right:10em;"/></button>
+                                        <button type="button" style="width:33px; height: 33px; background-color: Transparent; background-repeat:no-repeat; border: none; cursor:pointer; overflow: hidden;">
+                                            <img src="http://image.free.in.th/v/2013/ia/211103091536.jpg" style="width:30px; height: 30px; margin-right:10em;"/></button>
+                                        <button type="button" style="width:33px; height: 33px; background-color: Transparent; background-repeat:no-repeat; border: none; cursor:pointer; overflow: hidden;">
+                                            <img src="http://image.free.in.th/v/2013/ia/211103091536.jpg" style="width:30px; height: 30px; margin-right:10em;"/></button>
+                                        <button type="button" style="width:33px; height: 33px; background-color: Transparent; background-repeat:no-repeat; border: none; cursor:pointer; overflow: hidden;">
+                                            <img src="http://image.free.in.th/v/2013/ia/211103091536.jpg" style="width:30px; height: 30px; margin-right:10em;"/></button>
+                                        <button type="button" style="width:33px; height: 33px; background-color: Transparent; background-repeat:no-repeat; border: none; cursor:pointer; overflow: hidden;">
+                                            <img src="http://image.free.in.th/v/2013/ia/211103091536.jpg" style="width:30px; height: 30px; margin-right:10em;"/></button>
                                     </label>
                                 </td>
                                 <td class="light  color-white bg-red" width="7%">C</td>
                             </tr>
 
                             <tr style="height: 80px;">
-                                <td class="right color-white bg-red" width="7%">D</td>
+                                <td class="right color-white bg-red" width="7%">B</td>
                                 <td class="center">
                                     <label>
-                                        <img border="0" src="http://image.free.in.th/v/2013/ia/211103091536.jpg" style="width:36px; height: 36px"/>
-                                        <img border="0" src="http://image.free.in.th/v/2013/ia/211103091536.jpg" style="width:36px; height: 36px"/>
-                                        &nbsp;
-                                        <img border="0" src="http://image.free.in.th/v/2013/ia/211103091536.jpg" style="width:36px; height: 36px"/>
-                                        <img border="0" src="http://image.free.in.th/v/2013/ia/211103091536.jpg" style="width:36px; height: 36px"/>
-                                        &nbsp;
-                                        <img border="0" src="http://image.free.in.th/v/2013/ia/211103091536.jpg" style="width:36px; height: 36px"/>
-                                        <img border="0" src="http://image.free.in.th/v/2013/ia/211103091536.jpg" style="width:36px; height: 36px"/>
+                                        <button type="button" style="width:33px; height: 33px; background-color: Transparent; background-repeat:no-repeat; border: none; cursor:pointer; overflow: hidden;">
+                                            <img src="http://image.free.in.th/v/2013/ia/211103091536.jpg" style="width:30px; height: 30px; margin-right:10em;"/></button>
+                                        <button type="button" style="width:33px; height: 33px; background-color: Transparent; background-repeat:no-repeat; border: none; cursor:pointer; overflow: hidden;">
+                                            <img src="http://image.free.in.th/v/2013/ia/211103091536.jpg" style="width:30px; height: 30px; margin-right:10em;"/></button>
+                                        <button type="button" style="width:33px; height: 33px; background-color: Transparent; background-repeat:no-repeat; border: none; cursor:pointer; overflow: hidden;">
+                                            <img src="http://image.free.in.th/v/2013/ia/211103091536.jpg" style="width:30px; height: 30px; margin-right:10em;"/></button>
+                                        <button type="button" style="width:33px; height: 33px; background-color: Transparent; background-repeat:no-repeat; border: none; cursor:pointer; overflow: hidden;">
+                                            <img src="http://image.free.in.th/v/2013/ia/211103091536.jpg" style="width:30px; height: 30px; margin-right:10em;"/></button>
+                                        <button type="button" style="width:33px; height: 33px; background-color: Transparent; background-repeat:no-repeat; border: none; cursor:pointer; overflow: hidden;">
+                                            <img src="http://image.free.in.th/v/2013/ia/211103091536.jpg" style="width:30px; height: 30px; margin-right:10em;"/></button>
+                                        <button type="button" style="width:33px; height: 33px; background-color: Transparent; background-repeat:no-repeat; border: none; cursor:pointer; overflow: hidden;">
+                                            <img src="http://image.free.in.th/v/2013/ia/211103091536.jpg" style="width:30px; height: 30px; margin-right:10em;"/></button>
+                                        <button type="button" style="width:33px; height: 33px; background-color: Transparent; background-repeat:no-repeat; border: none; cursor:pointer; overflow: hidden;">
+                                            <img src="http://image.free.in.th/v/2013/ia/211103091536.jpg" style="width:30px; height: 30px; margin-right:10em;"/></button>
+                                        <button type="button" style="width:33px; height: 33px; background-color: Transparent; background-repeat:no-repeat; border: none; cursor:pointer; overflow: hidden;">
+                                            <img src="http://image.free.in.th/v/2013/ia/211103091536.jpg" style="width:30px; height: 30px; margin-right:10em;"/></button>
+                                    </label>
+                                </td>
+                                <td class="light  color-white bg-red" width="7%">B</td>
+                            </tr>
+
+                            <tr style="height: 80px;">
+                                <td class="right color-white bg-red" width="7%">A</td>
+                                <td class="center">
+                                    <label>
+                                        <button type="button" style="width:33px; height: 33px; background-color: Transparent; background-repeat:no-repeat; border: none; cursor:pointer; overflow: hidden;">
+                                            <img src="http://image.free.in.th/v/2013/ia/211103091536.jpg" style="width:30px; height: 30px; margin-right:10em;"/></button>
+                                        <button type="button" style="width:33px; height: 33px; background-color: Transparent; background-repeat:no-repeat; border: none; cursor:pointer; overflow: hidden;">
+                                            <img src="http://image.free.in.th/v/2013/ia/211103091536.jpg" style="width:30px; height: 30px; margin-right:10em;"/></button>
+                                        <button type="button" style="width:33px; height: 33px; background-color: Transparent; background-repeat:no-repeat; border: none; cursor:pointer; overflow: hidden;">
+                                            <img src="http://image.free.in.th/v/2013/ia/211103091536.jpg" style="width:30px; height: 30px; margin-right:10em;"/></button>
+                                        <button type="button" style="width:33px; height: 33px; background-color: Transparent; background-repeat:no-repeat; border: none; cursor:pointer; overflow: hidden;">
+                                            <img src="http://image.free.in.th/v/2013/ia/211103091536.jpg" style="width:30px; height: 30px; margin-right:10em;"/></button>
 
 
                                     </label>
                                 </td>
-                                <td class="light  color-white bg-red" width="7%">D</td>
+                                <td class="light  color-white bg-red" width="7%">A</td>
                             </tr>
                         </table>
                         </br>
@@ -319,12 +390,9 @@
                         </br>
                         </br>
 
-                        <img border="0" src="http://image.free.in.th/v/2013/im/211102103815.jpg" style="width:35px; height: 35px; margin-bottom:8px; margin-left:40px;"/>
-                        <p style="color:white; margin-left:90px; margin-top:-38px;">Normal Seat &nbsp; 300 บาท</p></br>
-                        <img border="0" src="http://image.free.in.th/v/2013/it/211103091247.jpg" style="width:33px; height: 33px; margin-bottom:8px; margin-left:40px;"/>
-                        <p style="color:white; margin-left:90px; margin-top:-38px;">Honeymoon Seat &nbsp; 450 บาท</p></br>
+
                         <img border="0" src="http://image.free.in.th/v/2013/ia/211103091536.jpg" style="width:36px; height: 36px; margin-bottom:8px; margin-left:40px;"/>
-                        <p style="color:white; margin-left:90px; margin-top:-38px;">Honeymoon twin Seat &nbsp; 1400 บาท/คู่</p></br>
+                        <p style="color:white; margin-left:90px; margin-top:-38px;">Honeymoon twin Seat &nbsp; 450 บาท</p></br>
                         </br>
                         </br>
                         </br>
@@ -338,34 +406,77 @@
                         <img border="0" src="http://image.free.in.th/v/2013/id/211102112448.jpg" style="margin-left:160px; width:620px; height: 80px; margin-bottom:70px; margin-top:50px;"/>
                         <table class="center data" width="70%" style="margin-left:145px;">
                             <tr style="height: 80px; border-color:#1e1e20;">
-                                <td class="right color-white bg-red" width="10%">A</td>
+                                <td class="right color-white bg-red" width="10%">D</td>
                                 <td class="center">
                                     <label>
-                                        <img border="0" src="http://image.free.in.th/v/2013/im/211102103815.jpg" style="width:35px; height: 35px"/>
-                                        <img border="0" src="http://image.free.in.th/v/2013/im/211102103815.jpg" style="width:35px; height: 35px"/>
-                                        <img border="0" src="http://image.free.in.th/v/2013/im/211102103815.jpg" style="width:35px; height: 35px"/>
-                                        <img border="0" src="http://image.free.in.th/v/2013/im/211102103815.jpg" style="width:35px; height: 35px"/>
-                                        <img border="0" src="http://image.free.in.th/v/2013/im/211102103815.jpg" style="width:35px; height: 35px"/>
-                                        <img border="0" src="http://image.free.in.th/v/2013/im/211102103815.jpg" style="width:35px; height: 35px"/>
-                                        <img border="0" src="http://image.free.in.th/v/2013/im/211102103815.jpg" style="width:35px; height: 35px"/>
-                                        <img border="0" src="http://image.free.in.th/v/2013/im/211102103815.jpg" style="width:35px; height: 35px"/>
+                                        <button type="button" style="width:35px; height: 35px; background-color: Transparent; background-repeat:no-repeat; border: none; cursor:pointer; overflow: hidden;">
+                                            <img src="http://image.free.in.th/v/2013/im/211102103815.jpg" style="width:35px; height: 35px; margin-right:10em;"/></button>
+                                        <button type="button" style="width:35px; height: 35px; background-color: Transparent; background-repeat:no-repeat; border: none; cursor:pointer; overflow: hidden;">
+                                            <img src="http://image.free.in.th/v/2013/im/211102103815.jpg" style="width:35px; height: 35px; margin-right:10em;"/></button>
+                                        <button type="button" style="width:35px; height: 35px; background-color: Transparent; background-repeat:no-repeat; border: none; cursor:pointer; overflow: hidden;">
+                                            <img src="http://image.free.in.th/v/2013/im/211102103815.jpg" style="width:35px; height: 35px; margin-right:10em;"/></button>
+                                        <button type="button" style="width:35px; height: 35px; background-color: Transparent; background-repeat:no-repeat; border: none; cursor:pointer; overflow: hidden;">
+                                            <img src="http://image.free.in.th/v/2013/im/211102103815.jpg" style="width:35px; height: 35px; margin-right:10em;"/></button>
+                                        <button type="button" style="width:35px; height: 35px; background-color: Transparent; background-repeat:no-repeat; border: none; cursor:pointer; overflow: hidden;">
+                                            <img src="http://image.free.in.th/v/2013/im/211102103815.jpg" style="width:35px; height: 35px; margin-right:10em;"/></button>
+                                        <button type="button" style="width:35px; height: 35px; background-color: Transparent; background-repeat:no-repeat; border: none; cursor:pointer; overflow: hidden;">
+                                            <img src="http://image.free.in.th/v/2013/im/211102103815.jpg" style="width:35px; height: 35px; margin-right:10em;"/></button>
+                                        <button type="button" style="width:35px; height: 35px; background-color: Transparent; background-repeat:no-repeat; border: none; cursor:pointer; overflow: hidden;">
+                                            <img src="http://image.free.in.th/v/2013/im/211102103815.jpg" style="width:35px; height: 35px; margin-right:10em;"/></button>
+                                        <button type="button" style="width:35px; height: 35px; background-color: Transparent; background-repeat:no-repeat; border: none; cursor:pointer; overflow: hidden;">
+                                            <img src="http://image.free.in.th/v/2013/im/211102103815.jpg" style="width:35px; height: 35px; margin-right:10em;"/></button>
+
                                     </label>
                                 </td>
-                                <td class="light  color-white bg-red" width="10%">A</td>
+                                <td class="light  color-white bg-red" width="10%">D</td>
+                            </tr>
+
+                            <tr style="height: 80px;">
+                                <td class="right color-white bg-red" width="7%">C</td>
+                                <td class="center">
+                                    <label>
+                                        <button type="button" style="width:35px; height: 35px; background-color: Transparent; background-repeat:no-repeat; border: none; cursor:pointer; overflow: hidden;">
+                                            <img src="http://image.free.in.th/v/2013/im/211102103815.jpg" style="width:35px; height: 35px; margin-right:10em;"/></button>
+                                        <button type="button" style="width:35px; height: 35px; background-color: Transparent; background-repeat:no-repeat; border: none; cursor:pointer; overflow: hidden;">
+                                            <img src="http://image.free.in.th/v/2013/im/211102103815.jpg" style="width:35px; height: 35px; margin-right:10em;"/></button>
+                                        <button type="button" style="width:35px; height: 35px; background-color: Transparent; background-repeat:no-repeat; border: none; cursor:pointer; overflow: hidden;">
+                                            <img src="http://image.free.in.th/v/2013/im/211102103815.jpg" style="width:35px; height: 35px; margin-right:10em;"/></button>
+                                        <button type="button" style="width:35px; height: 35px; background-color: Transparent; background-repeat:no-repeat; border: none; cursor:pointer; overflow: hidden;">
+                                            <img src="http://image.free.in.th/v/2013/im/211102103815.jpg" style="width:35px; height: 35px; margin-right:10em;"/></button>
+                                        <button type="button" style="width:35px; height: 35px; background-color: Transparent; background-repeat:no-repeat; border: none; cursor:pointer; overflow: hidden;">
+                                            <img src="http://image.free.in.th/v/2013/im/211102103815.jpg" style="width:35px; height: 35px; margin-right:10em;"/></button>
+                                        <button type="button" style="width:35px; height: 35px; background-color: Transparent; background-repeat:no-repeat; border: none; cursor:pointer; overflow: hidden;">
+                                            <img src="http://image.free.in.th/v/2013/im/211102103815.jpg" style="width:35px; height: 35px; margin-right:10em;"/></button>
+                                        <button type="button" style="width:35px; height: 35px; background-color: Transparent; background-repeat:no-repeat; border: none; cursor:pointer; overflow: hidden;">
+                                            <img src="http://image.free.in.th/v/2013/im/211102103815.jpg" style="width:35px; height: 35px; margin-right:10em;"/></button>
+                                        <button type="button" style="width:35px; height: 35px; background-color: Transparent; background-repeat:no-repeat; border: none; cursor:pointer; overflow: hidden;">
+                                            <img src="http://image.free.in.th/v/2013/im/211102103815.jpg" style="width:35px; height: 35px; margin-right:10em;"/></button>
+
+                                    </label>
+                                </td>
+                                <td class="light  color-white bg-red" width="7%">C</td>
                             </tr>
 
                             <tr style="height: 80px;">
                                 <td class="right color-white bg-red" width="7%">B</td>
                                 <td class="center">
                                     <label>
-                                        <img border="0" src="http://image.free.in.th/v/2013/im/211102103815.jpg" style="width:35px; height: 35px"/>
-                                        <img border="0" src="http://image.free.in.th/v/2013/im/211102103815.jpg" style="width:35px; height: 35px"/>
-                                        <img border="0" src="http://image.free.in.th/v/2013/im/211102103815.jpg" style="width:35px; height: 35px"/>
-                                        <img border="0" src="http://image.free.in.th/v/2013/im/211102103815.jpg" style="width:35px; height: 35px"/>
-                                        <img border="0" src="http://image.free.in.th/v/2013/im/211102103815.jpg" style="width:35px; height: 35px"/>
-                                        <img border="0" src="http://image.free.in.th/v/2013/im/211102103815.jpg" style="width:35px; height: 35px"/>
-                                        <img border="0" src="http://image.free.in.th/v/2013/im/211102103815.jpg" style="width:35px; height: 35px"/>
-                                        <img border="0" src="http://image.free.in.th/v/2013/im/211102103815.jpg" style="width:35px; height: 35px"/>
+                                        <button type="button" style="width:35px; height: 35px; background-color: Transparent; background-repeat:no-repeat; border: none; cursor:pointer; overflow: hidden;">
+                                            <img src="http://image.free.in.th/v/2013/im/211102103815.jpg" style="width:35px; height: 35px; margin-right:10em;"/></button>
+                                        <button type="button" style="width:35px; height: 35px; background-color: Transparent; background-repeat:no-repeat; border: none; cursor:pointer; overflow: hidden;">
+                                            <img src="http://image.free.in.th/v/2013/im/211102103815.jpg" style="width:35px; height: 35px; margin-right:10em;"/></button>
+                                        <button type="button" style="width:35px; height: 35px; background-color: Transparent; background-repeat:no-repeat; border: none; cursor:pointer; overflow: hidden;">
+                                            <img src="http://image.free.in.th/v/2013/im/211102103815.jpg" style="width:35px; height: 35px; margin-right:10em;"/></button>
+                                        <button type="button" style="width:35px; height: 35px; background-color: Transparent; background-repeat:no-repeat; border: none; cursor:pointer; overflow: hidden;">
+                                            <img src="http://image.free.in.th/v/2013/im/211102103815.jpg" style="width:35px; height: 35px; margin-right:10em;"/></button>
+                                        <button type="button" style="width:35px; height: 35px; background-color: Transparent; background-repeat:no-repeat; border: none; cursor:pointer; overflow: hidden;">
+                                            <img src="http://image.free.in.th/v/2013/im/211102103815.jpg" style="width:35px; height: 35px; margin-right:10em;"/></button>
+                                        <button type="button" style="width:35px; height: 35px; background-color: Transparent; background-repeat:no-repeat; border: none; cursor:pointer; overflow: hidden;">
+                                            <img src="http://image.free.in.th/v/2013/im/211102103815.jpg" style="width:35px; height: 35px; margin-right:10em;"/></button>
+                                        <button type="button" style="width:35px; height: 35px; background-color: Transparent; background-repeat:no-repeat; border: none; cursor:pointer; overflow: hidden;">
+                                            <img src="http://image.free.in.th/v/2013/im/211102103815.jpg" style="width:35px; height: 35px; margin-right:10em;"/></button>
+                                        <button type="button" style="width:35px; height: 35px; background-color: Transparent; background-repeat:no-repeat; border: none; cursor:pointer; overflow: hidden;">
+                                            <img src="http://image.free.in.th/v/2013/im/211102103815.jpg" style="width:35px; height: 35px; margin-right:10em;"/></button>
 
                                     </label>
                                 </td>
@@ -373,39 +484,21 @@
                             </tr>
 
                             <tr style="height: 80px;">
-                                <td class="right color-white bg-red" width="7%">C</td>
+                                <td class="right color-white bg-red" width="7%">A</td>
                                 <td class="center">
                                     <label>
-                                        <img border="0" src="http://image.free.in.th/v/2013/it/211103091247.jpg" style="width:33px; height: 33px"/>
-                                        <img border="0" src="http://image.free.in.th/v/2013/it/211103091247.jpg" style="width:33px; height: 33px"/>
-                                        <img border="0" src="http://image.free.in.th/v/2013/it/211103091247.jpg" style="width:33px; height: 33px"/>
-                                        <img border="0" src="http://image.free.in.th/v/2013/it/211103091247.jpg" style="width:33px; height: 33px"/>
-                                        <img border="0" src="http://image.free.in.th/v/2013/it/211103091247.jpg" style="width:33px; height: 33px"/>
-                                        <img border="0" src="http://image.free.in.th/v/2013/it/211103091247.jpg" style="width:33px; height: 33px"/>
-                                        <img border="0" src="http://image.free.in.th/v/2013/it/211103091247.jpg" style="width:33px; height: 33px"/>
-                                        <img border="0" src="http://image.free.in.th/v/2013/it/211103091247.jpg" style="width:33px; height: 33px"/>
-                                    </label>
-                                </td>
-                                <td class="light  color-white bg-red" width="7%">C</td>
-                            </tr>
-
-                            <tr style="height: 80px;">
-                                <td class="right color-white bg-red" width="7%">D</td>
-                                <td class="center">
-                                    <label>
-                                        <img border="0" src="http://image.free.in.th/v/2013/ia/211103091536.jpg" style="width:36px; height: 36px"/>
-                                        <img border="0" src="http://image.free.in.th/v/2013/ia/211103091536.jpg" style="width:36px; height: 36px"/>
-                                        <img border="0" src="http://image.free.in.th/v/2013/ia/211103091536.jpg" style="width:36px; height: 36px"/>
-                                        <img border="0" src="http://image.free.in.th/v/2013/ia/211103091536.jpg" style="width:36px; height: 36px"/>
-                                        <img border="0" src="http://image.free.in.th/v/2013/ia/211103091536.jpg" style="width:36px; height: 36px"/>
-                                        <img border="0" src="http://image.free.in.th/v/2013/ia/211103091536.jpg" style="width:36px; height: 36px"/>
-                                        <img border="0" src="http://image.free.in.th/v/2013/ia/211103091536.jpg" style="width:36px; height: 36px"/>
-                                        <img border="0" src="http://image.free.in.th/v/2013/ia/211103091536.jpg" style="width:36px; height: 36px"/>
-
+                                        <button type="button" style="width:35px; height: 35px; background-color: Transparent; background-repeat:no-repeat; border: none; cursor:pointer; overflow: hidden;">
+                                            <img src="http://image.free.in.th/v/2013/im/211102103815.jpg" style="width:35px; height: 35px; margin-right:10em;"/></button>
+                                        <button type="button" style="width:35px; height: 35px; background-color: Transparent; background-repeat:no-repeat; border: none; cursor:pointer; overflow: hidden;">
+                                            <img src="http://image.free.in.th/v/2013/im/211102103815.jpg" style="width:35px; height: 35px; margin-right:10em;"/></button>
+                                        <button type="button" style="width:35px; height: 35px; background-color: Transparent; background-repeat:no-repeat; border: none; cursor:pointer; overflow: hidden;">
+                                            <img src="http://image.free.in.th/v/2013/im/211102103815.jpg" style="width:35px; height: 35px; margin-right:10em;"/></button>
+                                        <button type="button" style="width:35px; height: 35px; background-color: Transparent; background-repeat:no-repeat; border: none; cursor:pointer; overflow: hidden;">
+                                            <img src="http://image.free.in.th/v/2013/im/211102103815.jpg" style="width:35px; height: 35px; margin-right:10em;"/></button>
 
                                     </label>
                                 </td>
-                                <td class="light  color-white bg-red" width="7%">D</td>
+                                <td class="light  color-white bg-red" width="7%">A</td>
                             </tr>
                         </table>
                         </br>
@@ -415,14 +508,12 @@
 
                         <img border="0" src="http://image.free.in.th/v/2013/im/211102103815.jpg" style="width:35px; height: 35px; margin-bottom:8px; margin-left:40px;"/>
                         <p style="color:white; margin-left:90px; margin-top:-38px;">Normal Seat &nbsp; 160 บาท</p></br>
-                        <img border="0" src="http://image.free.in.th/v/2013/it/211103091247.jpg" style="width:33px; height: 33px; margin-bottom:8px; margin-left:40px;"/>
-                        <p style="color:white; margin-left:90px; margin-top:-38px;">Honeymoon Seat &nbsp; 220 บาท</p></br>
-                        <img border="0" src="http://image.free.in.th/v/2013/ia/211103091536.jpg" style="width:36px; height: 36px; margin-bottom:8px; margin-left:40px;"/>
-                        <p style="color:white; margin-left:90px; margin-top:-38px;">Honeymoon twin Seat &nbsp; 700 บาท/คู่</p></br>
+
                         </br>
                         </br>
                         </br>
                     </div>
+
 
 
 
@@ -433,13 +524,27 @@
 
     <div class="col-3" style="margin-left:66em; border-radius: 1.5em; border: solid 1px #F21137; position:fixed;">
         <h3 style="text-align:center;">สรุปยอด</h3>
-        <p> เรื่องย่อ </p>
-        <p> เรื่องย่อ </p>
-        <p> เรื่องย่อ </p>
-        <p> เรื่องย่อ </p>
-        <p> เรื่องย่อ </p>
-        <p> เรื่องย่อ </p>
-        <p> เรื่องย่อ </p>
+<!--        <form th:action="@{}" method="POST">-->
+        <div class="row">
+            <div class="col-sm-8" style="margin-top:2em;">
+                <p>เรื่อง : </p>
+                <p>เวลา :</p>
+                <p>โรงภาพยนตร์ที่ : </p>
+                <p>ที่นั่ง : </p>
+                <p>สถานที่ : </p>
+                <p>ราคา : </p>
+            </div>
+            <div class="col-sm-4" style="margin-top:2em;">
+                <p th:text="${movie.name}" style="margin-left:-12em;"></p>
+                <p style="margin-left:-12em;"> รอบหนัง </p>
+                <p style="margin-left:-7em;"> โรงภาพยนตร์ที่ </p>
+                <p id="seat" style="margin-left:-12em;"></p>
+                <p style="margin-left:-11em;"> สถานที่ </p>
+                <p style="margin-left:-12em;"> ราคา </p>
+            </div>
+        </div>
+        <button type="submit" class="btn btn-warning" style="margin-top:1em; margin-left:7em; margin-bottom:2em; padding-left:2em; padding-right:2em;">ยืนยัน</button>
+<!--        </form>-->
     </div>
     </div>
     </div>
@@ -454,13 +559,20 @@
 <footer>
     <div th:insert="fragments/footer :: footer"></div>
 </footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+
+
+
 </body>
 <style>
 
-    img{
-        margin-left : 4px;
-        margin-right : 12px;
-    }
+<!--    img{-->
+<!--        margin-left : 4px;-->
+<!--        margin-right : 12px;-->
+<!--    }-->
 
     td{
         text-align: center;
