@@ -19,4 +19,7 @@ public class MovieShowtimeController {
         model.addAttribute("movie", movieService.getMovie(id));
         return "movieshowtime";
     }
+
+
+
 }
