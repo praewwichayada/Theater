@@ -16,17 +16,17 @@ public class Cinema {
     @Column(columnDefinition = "CHAR(36)")
     private UUID id;
 
-    private String theaterId;
+    private String theaterID;
     private String number;
     private String type;
     private int seats;
 
-    public String getTheaterId() {
-        return theaterId;
+    public String getTheaterID() {
+        return theaterID;
     }
 
-    public void setTheaterId(String theaterId) {
-        this.theaterId = theaterId;
+    public void setTheaterID(String theaterID) {
+        this.theaterID = theaterID;
     }
 
     public UUID getId() {

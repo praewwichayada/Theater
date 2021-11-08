@@ -19,6 +19,7 @@ public class ShowTime {
     private String movieID;
     private String cinemaID;
     private String dataTime;
+    private String price;
 
     public UUID getId() {
         return id;
@@ -50,5 +51,13 @@ public class ShowTime {
 
     public void setDataTime(String dataTime) {
         this.dataTime = dataTime;
+    }
+
+    public String getPrice() {
+        return price;
+    }
+
+    public void setPrice(String price) {
+        this.price = price;
     }
 }
