@@ -33,5 +33,11 @@ public class HomeController {
         model.addAttribute("moviesComingSoon", moviesComingSoon);
         return "home";
     }
+
+    @RequestMapping("/movies")
+    public String getMoviesPage() {
+        return "movies";
+    }
+
 }
 

@@ -16,8 +16,8 @@ public class ShowTime {
     @Column(columnDefinition = "CHAR(36)")
     private UUID id;
 
-    private UUID movieID;
-    private UUID cinemaID;
+    private String movieID;
+    private String cinemaID;
     private String dataTime;
 
     public UUID getId() {
@@ -28,19 +28,19 @@ public class ShowTime {
         this.id = id;
     }
 
-    public UUID getMovieID() {
+    public String getMovieID() {
         return movieID;
     }
 
-    public void setMovieID(UUID movieID) {
+    public void setMovieID(String movieID) {
         this.movieID = movieID;
     }
 
-    public UUID getCinemaID() {
+    public String getCinemaID() {
         return cinemaID;
     }
 
-    public void setCinemaID(UUID cinemaID) {
+    public void setCinemaID(String cinemaID) {
         this.cinemaID = cinemaID;
     }
 
