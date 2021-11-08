@@ -2,8 +2,10 @@ package theater.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
-import theater.model.User;
+import theater.model.Place;
+
+import java.util.UUID;
 
 @Repository
-public interface UserRepository extends JpaRepository<User,String> {
+public interface PlaceRepository extends JpaRepository<Place, UUID> {
 }

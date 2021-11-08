@@ -9,7 +9,7 @@ import javax.persistence.Id;
 import java.util.UUID;
 
 @Entity
-public class Theater {
+public class Place {
     @Id
     @GeneratedValue(generator = "UUID")
     @Type(type = "org.hibernate.type.UUIDCharType")

@@ -26,26 +26,6 @@ public class CinemaService {
         return cinema;
     }
 
-    public Cinema update(UUID id, Cinema requestBody) {
-        Cinema record = cinemaRepository.findById(id).get();
-
-        if(requestBody.getNumber() != null ){
-            record.setNumber(requestBody.getNumber());
-        }
-
-        if(requestBody.getType() != null ){
-            record.setType(requestBody.getType());
-        }
-
-        if(requestBody.getSeats() > 0 ){
-            record.setSeats(requestBody.getSeats());
-        }
-
-        Cinema restaurant = cinemaRepository.save(record);
-
-        return restaurant;
-    }
-
     public Cinema delete(UUID id){
         Cinema record = cinemaRepository.findById(id).get();
         cinemaRepository.deleteById(id);
