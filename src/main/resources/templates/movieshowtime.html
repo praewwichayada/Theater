@@ -32,7 +32,7 @@
         </div>
         <div class="col" style="margin-right:35em;">
             <h3 th:text="${movie.name}"></h3>
-            <h6 th:text="${movie.period}"></h6>
+            <h6 th:text="@{${movie.period + ' นาที'}}"></h6>
             <p>เรื่องย่อ</p>
             <p th:text="${movie.description}"></p>
         </div>
