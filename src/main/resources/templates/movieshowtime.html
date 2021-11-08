@@ -27,10 +27,9 @@
 </script>
 
  <script>
-       var seat = [];
+
        function getID(id){
-         seat.push(document.getElementById("seat").innerHTML = id);
-         document.getElementById("seat").innerHTML = seat;
+         document.getElementById("seat").innerHTML = id;
     }
 
 });
@@ -70,16 +69,20 @@
                         </a>
                     </li>
                 </ul>
+                                                <div th:each="showtime : ${showtimes}">
+                                                    <p th:text="${showtime.dateTime}"></p>
+                                                </div>
+
 
                 <div class="tab-content" id="pills-tab-content">
                     <div class="tab-pane fade active show" id="bkcinemas-showing" role="tabpanel" aria-labelledby="bkcinemas-tab">
 <!--                        <h4 style="magin-left:3em; margin-bottom:2em; color:black;">1.เลือกโรงภาพยนตร์ และ รอบฉาย</h4>-->
+                        <div th:each="place : ${places}">
                         <div class="accordion" id="accordionPanelsStayOpenExample">
                             <div class="accordion-item">
                                 <h2 class="accordion-header" id="panelsStayOpen-headingOne">
                                     <div class="d-grid gap-2">
-                                    <button class="btn btn-outline-danger" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
-                                        พารากอน ซีนีเพล็กซ์
+                                    <button class="btn btn-outline-danger" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne" th:text="${place.name}" >
                                     </button>
                                     </div>
                                 </h2>
@@ -88,9 +91,11 @@
                                         <h4 style="margin-top:1em;">โรงภาพยนตร์ที่ 1     &nbsp;    &nbsp;
                                             <img border="0" src="http://image.free.in.th/v/2013/iy/211102033326.png" style="margin-left:px; width:40px; height: 40px;"/>
                                         </h4>
+                                        <div th:each="showtime : ${showtimes}">
                                         <div class="grid">
-                                            <button type="button" id="m11bt11" class="btn btn-outline-dark" data-toggle="pill" href="#fourkbkcinemas-showingseat" role="tab" aria-controls="fourkbkcinemas-showingseat" style="margin-top: 2em; margin-left: 3em; padding-left: 1em; padding-right: 1em;">11.00</button>
-                                            <button type="button" id="m11bt15" class="btn btn-outline-dark" data-toggle="pill" href="#fourkbkcinemas-showingseat" role="tab" aria-controls="fourkbkcinemas-showingseat" style="margin-top: 2em; margin-left: 3em; padding-left: 1em; padding-right: 1em;">15.00</button>
+                                            <button type="button" id="m11bt15" class="btn btn-outline-dark" data-toggle="pill" href="#fourkbkcinemas-showingseat" role="tab" aria-controls="fourkbkcinemas-showingseat" style="margin-top: 2em; margin-left: 3em; padding-left: 1em; padding-right: 1em;" th:text="${showtime.dateTime}"></button>
+
+                                        </div>
                                         </div>
                                         <p  style="color:white; padding-bottom: 2em; margin-bottom: 2em; border-bottom: solid 1px #494949; margin-left: 1em; padding-left: 2em; margin-right: 10em;">_</p>
 
@@ -118,51 +123,52 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="accordion-item">
-                                <h2 class="accordion-header" id="panelsStayOpen-headingTwo">
-                                    <div class="d-grid gap-2">
-                                        <button class="btn btn-outline-danger" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false" aria-controls="panelsStayOpen-collapseTwo">
-                                            ควอเทียร์ ซีเนอาร์ต
-                                        </button>
-                                    </div>
-                                </h2>
-                                <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingTwo">
-                                    <div class="accordion-body">
-                                        <h4 style="margin-top:1em;">โรงภาพยนตร์ที่ 1     &nbsp;    &nbsp;
-                                            <img border="0" src="http://image.free.in.th/v/2013/iy/211102033326.png" style="margin-left:px; width:40px; height: 40px;"/>
-                                        </h4>
-                                        <div class="grid">
-                                            <button type="button" id="m21bt11" class="btn btn-outline-dark" data-toggle="pill" href="#fourkbkcinemas-showingseat" role="tab" aria-controls="fourkbkcinemas-showingseat" style="margin-top: 2em; margin-left: 3em; padding-left: 1em; padding-right: 1em;">11.00</button>
-                                            <button type="button" id="m21bt15" class="btn btn-outline-dark" data-toggle="pill" href="#bkcinemas-showingseat" role="tab" aria-controls="bkcinemas-showingseat" style="margin-top: 2em; margin-left: 3em; padding-left: 1em; padding-right: 1em;">15.00</button>
-                                        </div>
-                                        <p id="1line" style="color:white; padding-bottom: 2em; margin-bottom: 2em; border-bottom: solid 1px #494949; margin-left: 1em; padding-left: 2em; margin-right: 10em;">_</p>
+<!--                            <div class="accordion-item">-->
+<!--                                <h2 class="accordion-header" id="panelsStayOpen-headingTwo">-->
+<!--                                    <div class="d-grid gap-2">-->
+<!--                                        <button class="btn btn-outline-danger" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false" aria-controls="panelsStayOpen-collapseTwo">-->
+<!--                                            ควอเทียร์ ซีเนอาร์ต-->
+<!--                                        </button>-->
+<!--                                    </div>-->
+<!--                                </h2>-->
+<!--                                <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingTwo">-->
+<!--                                    <div class="accordion-body">-->
+<!--                                        <h4 style="margin-top:1em;">โรงภาพยนตร์ที่ 1     &nbsp;    &nbsp;-->
+<!--                                            <img border="0" src="http://image.free.in.th/v/2013/iy/211102033326.png" style="margin-left:px; width:40px; height: 40px;"/>-->
+<!--                                        </h4>-->
+<!--                                        <div class="grid">-->
+<!--                                            <button type="button" id="m21bt11" class="btn btn-outline-dark" data-toggle="pill" href="#fourkbkcinemas-showingseat" role="tab" aria-controls="fourkbkcinemas-showingseat" style="margin-top: 2em; margin-left: 3em; padding-left: 1em; padding-right: 1em;">11.00</button>-->
+<!--                                            <button type="button" id="m21bt15" class="btn btn-outline-dark" data-toggle="pill" href="#bkcinemas-showingseat" role="tab" aria-controls="bkcinemas-showingseat" style="margin-top: 2em; margin-left: 3em; padding-left: 1em; padding-right: 1em;">15.00</button>-->
+<!--                                        </div>-->
+<!--                                        <p id="1line" style="color:white; padding-bottom: 2em; margin-bottom: 2em; border-bottom: solid 1px #494949; margin-left: 1em; padding-left: 2em; margin-right: 10em;">_</p>-->
 
-                                        <h4 style="margin-top:1em;">โรงภาพยนตร์ที่ 2     &nbsp;    &nbsp;
-                                            <img border="0" src="http://image.free.in.th/v/2013/im/211103095250.png" style="margin-left:px; width:45px; height: 45px;"/>
+<!--                                        <h4 style="margin-top:1em;">โรงภาพยนตร์ที่ 2     &nbsp;    &nbsp;-->
+<!--                                            <img border="0" src="http://image.free.in.th/v/2013/im/211103095250.png" style="margin-left:px; width:45px; height: 45px;"/>-->
 
-                                        </h4>
-                                        <div class="grid">
-                                            <button type="button" id="m22bt13" class="btn btn-outline-dark" data-toggle="pill" href="#threedbkcinemas-showingseat" role="tab" aria-controls="threedbkcinemas-showingseat" style="margin-top: 2em; margin-left: 3em; padding-left: 1em; padding-right: 1em;">13.00</button>
-                                            <button type="button" id="m22bt18" class="btn btn-outline-dark" data-toggle="pill" href="#3dbkcinemas-showingseat" role="tab" aria-controls="3dbkcinemas-showingseat" style="margin-top: 2em; margin-left: 3em; padding-left: 1em; padding-right: 1em;">18.00</button>
-                                        </div>
-                                        <p id="2line" style="color:white; padding-bottom: 2em; margin-bottom: 2em; border-bottom: solid 1px #494949; margin-left: 1em; padding-left: 2em; margin-right: 10em;">_</p>
+<!--                                        </h4>-->
+<!--                                        <div class="grid">-->
+<!--                                            <button type="button" id="m22bt13" class="btn btn-outline-dark" data-toggle="pill" href="#threedbkcinemas-showingseat" role="tab" aria-controls="threedbkcinemas-showingseat" style="margin-top: 2em; margin-left: 3em; padding-left: 1em; padding-right: 1em;">13.00</button>-->
+<!--                                            <button type="button" id="m22bt18" class="btn btn-outline-dark" data-toggle="pill" href="#3dbkcinemas-showingseat" role="tab" aria-controls="3dbkcinemas-showingseat" style="margin-top: 2em; margin-left: 3em; padding-left: 1em; padding-right: 1em;">18.00</button>-->
+<!--                                        </div>-->
+<!--                                        <p id="2line" style="color:white; padding-bottom: 2em; margin-bottom: 2em; border-bottom: solid 1px #494949; margin-left: 1em; padding-left: 2em; margin-right: 10em;">_</p>-->
 
-                                        <h4 style="margin-top:1em;">โรงภาพยนตร์ที่ 3     &nbsp;    &nbsp;
-                                            <img border="0" src="https://normal.studio/wp-content/uploads/2019/10/share-image-2019.png" style="margin-left:-15px; width:120px; height: 90px;"/>
-                                        </h4>
-                                        <div class="grid">
-                                            <button type="button" id="m23bt11" class="btn btn-outline-dark" data-toggle="pill" href="#normalbkcinemas-showingseat" role="tab" aria-controls="normalbkcinemas-showingseat" style="margin-top: 2em; margin-left: 3em; padding-left: 1em; padding-right: 1em;">11.00</button>
-                                            <button type="button" id="m23bt13" class="btn btn-outline-dark" data-toggle="pill" href="#normalbkcinemas-showingseat" role="tab" aria-controls="normalbkcinemas-showingseat" style="margin-top: 2em; margin-left: 3em; padding-left: 1em; padding-right: 1em;">13.00</button>
-                                            <button type="button" id="m23bt15" class="btn btn-outline-dark" data-toggle="pill" href="#normalbkcinemas-showingseat" role="tab" aria-controls="normalbkcinemas-showingseat" style="margin-top: 2em; margin-left: 3em; padding-left: 1em; padding-right: 1em;">15.00</button>
-                                            <button type="button" id="m23bt18" class="btn btn-outline-dark" data-toggle="pill" href="#normalbkcinemas-showingseat" role="tab" aria-controls="normalbkcinemas-showingseat" style="margin-top: 2em; margin-left: 3em; padding-left: 1em; padding-right: 1em;">18.00</button>
-                                        </div>
-                                        <p id="3line" style="color:white; padding-bottom: 2em; margin-bottom: 2em; border-bottom: solid 1px #494949; margin-left: 1em; padding-left: 2em; margin-right: 10em;">_</p>
+<!--                                        <h4 style="margin-top:1em;">โรงภาพยนตร์ที่ 3     &nbsp;    &nbsp;-->
+<!--                                            <img border="0" src="https://normal.studio/wp-content/uploads/2019/10/share-image-2019.png" style="margin-left:-15px; width:120px; height: 90px;"/>-->
+<!--                                        </h4>-->
+<!--                                        <div class="grid">-->
+<!--                                            <button type="button" id="m23bt11" class="btn btn-outline-dark" data-toggle="pill" href="#normalbkcinemas-showingseat" role="tab" aria-controls="normalbkcinemas-showingseat" style="margin-top: 2em; margin-left: 3em; padding-left: 1em; padding-right: 1em;">11.00</button>-->
+<!--                                            <button type="button" id="m23bt13" class="btn btn-outline-dark" data-toggle="pill" href="#normalbkcinemas-showingseat" role="tab" aria-controls="normalbkcinemas-showingseat" style="margin-top: 2em; margin-left: 3em; padding-left: 1em; padding-right: 1em;">13.00</button>-->
+<!--                                            <button type="button" id="m23bt15" class="btn btn-outline-dark" data-toggle="pill" href="#normalbkcinemas-showingseat" role="tab" aria-controls="normalbkcinemas-showingseat" style="margin-top: 2em; margin-left: 3em; padding-left: 1em; padding-right: 1em;">15.00</button>-->
+<!--                                            <button type="button" id="m23bt18" class="btn btn-outline-dark" data-toggle="pill" href="#normalbkcinemas-showingseat" role="tab" aria-controls="normalbkcinemas-showingseat" style="margin-top: 2em; margin-left: 3em; padding-left: 1em; padding-right: 1em;">18.00</button>-->
+<!--                                        </div>-->
+<!--                                        <p id="3line" style="color:white; padding-bottom: 2em; margin-bottom: 2em; border-bottom: solid 1px #494949; margin-left: 1em; padding-left: 2em; margin-right: 10em;">_</p>-->
 
-                                    </div>
-                                </div>
-                            </div>
+<!--                                    </div>-->
+<!--                                </div>-->
+<!--                            </div>-->
 
 
+                        </div>
                         </div>
                     </div>
 
@@ -175,7 +181,7 @@
                         <table class="center data" width="60%" style="margin-left:190px;">
                             <tr style="height: 80px; border-color:#1e1e20;">
                                 <td class="right color-white bg-red" width="10%">D</td>
-<!--                                @foreach($i = )-->
+
                                 <td class="center">
                                     <label>
 
@@ -259,9 +265,9 @@
                                         <button type="button" id="A2" onclick="getID(this.id)" style="width:33px; height: 33px; background-color: Transparent; background-repeat:no-repeat; border: none; cursor:pointer; overflow: hidden;">
                                             <img src="http://image.free.in.th/v/2013/it/211103091247.jpg" style="width:30px; height: 30px; margin-right:10em;"/></button>
 
-                                        <button type="button" style="width:33px; height: 33px; background-color: Transparent; background-repeat:no-repeat; border: none; cursor:pointer; overflow: hidden;">
+                                        <button type="button" id="A3" onclick="getID(this.id)" style="width:33px; height: 33px; background-color: Transparent; background-repeat:no-repeat; border: none; cursor:pointer; overflow: hidden;">
                                             <img src="http://image.free.in.th/v/2013/it/211103091247.jpg" style="width:30px; height: 30px; margin-right:10em;"/></button>
-                                        <button type="button" style="width:33px; height: 33px; background-color: Transparent; background-repeat:no-repeat; border: none; cursor:pointer; overflow: hidden;">
+                                        <button type="button" id="A4" onclick="getID(this.id)" style="width:33px; height: 33px; background-color: Transparent; background-repeat:no-repeat; border: none; cursor:pointer; overflow: hidden;">
                                             <img src="http://image.free.in.th/v/2013/it/211103091247.jpg" style="width:30px; height: 30px; margin-right:10em;"/></button>
 
 
@@ -534,10 +540,10 @@
             </div>
             <div class="col-sm-4" style="margin-top:2em;">
                 <p th:text="${movie.name}" style="margin-left:-12em;"></p>
-                <p style="margin-left:-12em;"> รอบหนัง </p>
+                <p style="margin-left:-12em;" th:text="${showtime.dateTime}"></p>
                 <p style="margin-left:-7em;"> โรงภาพยนตร์ที่ </p>
                 <p id="seat" style="margin-left:-12em;"></p>
-                <p style="margin-left:-11em;"> สถานที่ </p>
+                <p style="margin-left:-11em;" th:text="${plece.name}"></p>
                 <p style="margin-left:-12em;"> ราคา </p>
             </div>
         </div>

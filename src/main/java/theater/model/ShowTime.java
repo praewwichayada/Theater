@@ -18,8 +18,8 @@ public class ShowTime {
 
     private String movieID;
     private String cinemaID;
-    private String dataTime;
-    private String price;
+    private String dateTime;
+    private int price;
 
     public UUID getId() {
         return id;
@@ -45,19 +45,19 @@ public class ShowTime {
         this.cinemaID = cinemaID;
     }
 
-    public String getDataTime() {
-        return dataTime;
+    public String getDateTime() {
+        return dateTime;
     }
 
-    public void setDataTime(String dataTime) {
-        this.dataTime = dataTime;
+    public void setDateTime(String dateTime) {
+        this.dateTime = dateTime;
     }
 
-    public String getPrice() {
+    public int getPrice() {
         return price;
     }
 
-    public void setPrice(String price) {
+    public void setPrice(int price) {
         this.price = price;
     }
 }
