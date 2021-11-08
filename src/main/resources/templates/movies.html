@@ -37,12 +37,16 @@
 </ul>
 
 <div class="tab-content" id="pills-tab-content">
-  <div th:each="movie : ${moviesOnAir}" class="tab-pane fade active show" id="movie-showing" role="tabpanel" aria-labelledby="showing-tab">
-    <a th:href="@{${'/movies/' + movie.id}}"><img th:src="@{${movie.image}}" class="img-thumbnail" alt="..."></a>
+  <div class="tab-pane fade active show" id="movie-showing" role="tabpanel" aria-labelledby="showing-tab">
+    <tr th:each="movie : ${moviesOnAir}">
+      <a th:href="@{${'/movies/' + movie.id}}"><img th:src="@{${movie.image}}" class="img-thumbnail" alt="..."></a>
+    </tr>
   </div>
 
-  <div th:each="movie : ${moviesComingSoon}" class="tab-pane fade" id="movie-coming" role="tabpanel" aria-labelledby="coming-tab">
-    <a th:href="@{${'/movies/' + movie.id}}"><img th:src="@{${movie.image}}" class="img-thumbnail" alt="..."></a>
+  <div class="tab-pane fade" id="movie-coming" role="tabpanel" aria-labelledby="coming-tab">
+    <tr th:each="movie : ${moviesComingSoon}">
+      <a th:href="@{${'/movies/' + movie.id}}"><img th:src="@{${movie.image}}" class="img-thumbnail" alt="..."></a>
+    </tr>
   </div>
 </div>
 </div>
