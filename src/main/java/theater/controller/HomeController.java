@@ -18,7 +18,7 @@ public class HomeController {
     MovieService movieService;
 
     @RequestMapping("/")
-    public String getHomePage(Model model, @AuthenticationPrincipal OAuth2User principal){
+    public String getHomePage(Model model){
         List<Movie> movies = movieService.getALl();
         List<Movie> moviesOnAir = new ArrayList<>();
         List<Movie> moviesComingSoon = new ArrayList<>();
@@ -33,13 +33,6 @@ public class HomeController {
 
         model.addAttribute("moviesOnAir", moviesOnAir);
         model.addAttribute("moviesComingSoon", moviesComingSoon);
-
-
-        if (principal != null)
-            model.addAttribute("user", principal.getAttribute("email"));
-        else
-            model.addAttribute("user", "Guest");
-
         return "home";
     }
 }

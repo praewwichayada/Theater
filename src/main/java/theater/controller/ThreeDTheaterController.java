@@ -1,6 +1,8 @@
 package theater.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
+import org.springframework.security.oauth2.core.user.OAuth2User;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -27,11 +29,14 @@ public class ThreeDTheaterController {
     ShowTimeService showTimeService;
 
     @RequestMapping("/threedtheater/{movieID}/{placeID}/{cinemaID}/{showTimeID}")
-    public String getThreeDPage(@PathVariable UUID movieID,@PathVariable UUID placeID,@PathVariable UUID cinemaID,@PathVariable UUID showTimeID, Model model) {
+    public String getThreeDPage(@PathVariable UUID movieID,@PathVariable UUID placeID,@PathVariable UUID cinemaID,@PathVariable UUID showTimeID, Model model, @AuthenticationPrincipal OAuth2User principal) {
         model.addAttribute("movie", movieService.getMovie(movieID));
         model.addAttribute("place", placeService.getPlace(placeID));
         model.addAttribute("cinema", cinemaService.getCinema(cinemaID));
         model.addAttribute("showTime", showTimeService.getShowTime(showTimeID));
+
+        model.addAttribute("user", principal.getAttribute("email"));
+
         return "threedtheater";
     }
 }
