@@ -36,6 +36,8 @@ public class ThreeDTheaterController {
         model.addAttribute("cinema", cinemaService.getCinema(cinemaID));
         model.addAttribute("showTime", showTimeService.getShowTime(showTimeID));
 
+        model.addAttribute("promotion", promotionService.getALl());
+
         model.addAttribute("user", principal.getAttribute("email"));
 
         return "threedtheater";

@@ -229,7 +229,7 @@
       </div>
     </div>
 
-    <div class="col-3" style="margin-left:65em; border-radius: 1.5em; border: solid 1px #F21137; position:fixed;">
+    <div class="col-3" style="margin-left:85em; border-radius: 1.5em; border: solid 1px #F21137; position:fixed;">
       <h3 style="text-align:center;">สรุปยอด</h3>
       <div class="row">
         <div class="col-sm-8" style="margin-top:2em;">
@@ -238,17 +238,8 @@
           <p th:text="'โรงภาพยนตร์ที่ : ' + ${cinema.number}"></p>
           <p th:text="'เวลา : ' + ${showTime.dateTime}"></p>
           <p>ที่นั่ง : <span id="seat"></span></p>
-          <p th:text="'ผู้ใช้ : ' + |${user}|"></p>
+          <p th:text="'ผู้ใช้ : ' + ${user}"></p>
           <p th:text="'ราคา : ' + ${showTime.price}"></p>
-
-<!--          <td th:switch="${#lists.size(promotion.code)}">-->
-<!--            <span th:case="'HAPPYSENIOR'" th:text="'ราคา : ' + ${showTime.price-100}"></span>-->
-<!--            <span th:case="'HAPPYWED'" th:text="'ราคา : ' + ${showTime.price-50}"></span>-->
-<!--            <div th:case="'IMASTUDENT'" th:text="'ราคา : ' + ${showTime.price-80}">-->
-<!--              <div th:each="course:${teacher.courses}" th:text="${course}"/>-->
-<!--            </div>-->
-<!--          </td>-->
-
           <form class="row g-3" th:action="">
             <div class="col-auto">
               <label for="inputPromotion" class="visually-hidden"></label>

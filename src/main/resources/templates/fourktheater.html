@@ -48,8 +48,6 @@
         document.getElementById("A3i").src = "http://image.free.in.th/v/2013/ia/211103091536.jpg"
         document.getElementById("A4i").src = "http://image.free.in.th/v/2013/ia/211103091536.jpg"
 
-
-
         item.src = "http://image.free.in.th/v/2013/iq/211103013237.png";
     }
 </script>
@@ -57,6 +55,16 @@
     <script>
     function getID(id){
           document.getElementById("seat").innerHTML = id;
+    }
+</script>
+
+    <script>
+    function changePath(){
+          if(document.getElementById("inputPromotion").value != ""){
+                window.location.href = window.location.pathname + "/" + document.getElementById("inputPromotion").value;
+          }else{
+                alert("กรุณาใส่รหัสส่วนลด");
+          }
     }
 </script>
 
@@ -204,8 +212,6 @@
                                             <img id="A3i" src="http://image.free.in.th/v/2013/ia/211103091536.jpg" onclick="img(this);" style="width:30px; height: 30px; margin-right:10em;"/></button>
                                         <button id="A4" type="button" onclick="getID(this.id)" style="width:33px; height: 33px; background-color: Transparent; background-repeat:no-repeat; border: none; cursor:pointer; overflow: hidden;">
                                             <img id="A4i" src="http://image.free.in.th/v/2013/ia/211103091536.jpg" onclick="img(this);" style="width:30px; height: 30px; margin-right:10em;"/></button>
-
-
                                     </label>
                                 </td>
                                 <td class="light  color-white bg-red" width="7%">A</td>
@@ -227,7 +233,7 @@
             </div>
         </div>
 
-        <div class="col-3" style="margin-left:65em; border-radius: 1.5em; border: solid 1px #F21137; position:fixed;">
+        <div class="col-3" style="margin-left:85em; border-radius: 1.5em; border: solid 1px #F21137; position:fixed;">
             <h3 style="text-align:center;">สรุปยอด</h3>
             <div class="row">
                 <div class="col-sm-8" style="margin-top:2em;">
@@ -237,15 +243,17 @@
                     <p th:text="'เวลา : ' + ${showTime.dateTime}"></p>
                     <p>ที่นั่ง : <span id="seat"></span></p>
                     <p th:text="'ราคา : ' + ${showTime.price}"></p>
-                    <form class="row g-3">
-                        <div class="col-auto">
-                            <label for="inputPromotion" class="visually-hidden"></label>
-                            <input type="promotion" class="form-control" id="inputPromotion" placeholder="กรอกโค้ดส่วนลดของคุณ">
-                        </div>
-                        <div class="col-auto">
-                            <button type="submit" class="btn btn-outline-dark mb-3">ใช้โค้ดส่วนลด</button>
-                        </div>
-                    </form>
+                    <div th:if="${!#strings.equals(status,'succeed')}"  class="col-auto">
+                        <a th:if="${#strings.equals(status,'fail')}">โค้ดใช้งานไม่ได้</a>
+                        <label for="inputPromotion" class="visually-hidden"></label>
+                        <input type="promotion" class="form-control" id="inputPromotion" placeholder="กรอกโค้ดส่วนลดของคุณ">
+                        <a type="button" class="btn btn-outline-dark mb-3"  onclick="changePath()" >ใช้โค้ดส่วนลด</a>
+                    </div>
+                    <div th:if="${#strings.equals(status,'succeed')}" class="col-auto">
+                        <p th:if="${#strings.equals(status,'succeed')}" th:text="'ส่วนลดที่ใช้ : ' + ${code}"></p>
+                        <p th:text="'ส่วนลดที่ได้ : ' + ${discount}"></p>
+                        <p th:text="'ราคาหลังจากหักส่วนลด : ' + ${finalPrice}"></p>
+                    </div>
                 </div>
             </div>
             <button type="submit" class="btn btn-warning" style="margin-top:1em; margin-left:7em; margin-bottom:2em; padding-left:2em; padding-right:2em;">ยืนยัน</button>
