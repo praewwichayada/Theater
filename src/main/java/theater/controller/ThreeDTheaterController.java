@@ -7,10 +7,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
-import theater.service.CinemaService;
-import theater.service.MovieService;
-import theater.service.PlaceService;
-import theater.service.ShowTimeService;
+import org.springframework.web.bind.annotation.RequestParam;
+import theater.service.*;
 
 import java.util.UUID;
 
@@ -28,6 +26,9 @@ public class ThreeDTheaterController {
     @Autowired
     ShowTimeService showTimeService;
 
+    @Autowired
+    PromotionService promotionService;
+
     @RequestMapping("/threedtheater/{movieID}/{placeID}/{cinemaID}/{showTimeID}")
     public String getThreeDPage(@PathVariable UUID movieID,@PathVariable UUID placeID,@PathVariable UUID cinemaID,@PathVariable UUID showTimeID, Model model, @AuthenticationPrincipal OAuth2User principal) {
         model.addAttribute("movie", movieService.getMovie(movieID));
@@ -39,4 +40,11 @@ public class ThreeDTheaterController {
 
         return "threedtheater";
     }
+
+//    @RequestMapping("/threedtheater/{promotionID}")
+//    public String getCodePromotion(@PathVariable UUID promotionID,Model model) {
+//        public String code(@RequestParam(value = ))
+//        model.addAttribute("code", promotionService.getCode(promotionID);
+//        return ;
+//    }
 }
