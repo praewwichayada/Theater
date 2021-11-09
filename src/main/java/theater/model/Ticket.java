@@ -16,7 +16,7 @@ public class Ticket {
     @Column(columnDefinition = "CHAR(36)")
     private UUID id;
 
-    private UUID showTimeID;
+    private String showTimeID;
     private String email;
     private String seat;
 
@@ -28,11 +28,11 @@ public class Ticket {
         this.id = id;
     }
 
-    public UUID getShowTimeID() {
+    public String getShowTimeID() {
         return showTimeID;
     }
 
-    public void setShowTimeID(UUID showTimeID) {
+    public void setShowTimeID(String showTimeID) {
         this.showTimeID = showTimeID;
     }
 

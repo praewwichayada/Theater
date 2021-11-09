@@ -3,14 +3,14 @@ package theater.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import theater.model.Cinema;
 import theater.model.ShowTime;
-import theater.service.CinemaService;
-import theater.service.MovieService;
-import theater.service.PlaceService;
-import theater.service.ShowTimeService;
+import theater.model.Ticket;
+import theater.service.*;
 
 import java.util.*;
 
@@ -27,6 +27,9 @@ public class MovieShowtimeController {
 
     @Autowired
     ShowTimeService showTimeService;
+
+    @Autowired
+    TicketService ticketService;
 
     @RequestMapping("movies/{id}")
     public String getMovieShowtimePage(@PathVariable UUID id,Model model){
@@ -55,6 +58,13 @@ public class MovieShowtimeController {
 
         return "movieshowtime";
     }
+
+
+//    @PostMapping("/add")
+//    public String addTicket(@ModelAttribute Ticket ticket, Model model) {
+//        ticketService.addTicket(ticket);
+//        return "redirect:/restaurant";
+//    }
 
 
 
