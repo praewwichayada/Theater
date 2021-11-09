@@ -237,10 +237,15 @@
                     <p th:text="'เวลา : ' + ${showTime.dateTime}"></p>
                     <p>ที่นั่ง : <span id="seat"></span></p>
                     <p th:text="'ราคา : ' + ${showTime.price}"></p>
-                    <div class="form-floating">
-                        <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea" style="margin-top:1em; margin-bottom:1em; margin-left:4em;"></textarea>
-                        <label for="floatingTextarea" style="margin-left:4em;">กรอกโค้ดส่วนลดของคุณ</label>
-                    </div>
+                    <form class="row g-3">
+                        <div class="col-auto">
+                            <label for="inputPromotion" class="visually-hidden"></label>
+                            <input type="promotion" class="form-control" id="inputPromotion" placeholder="กรอกโค้ดส่วนลดของคุณ">
+                        </div>
+                        <div class="col-auto">
+                            <button type="submit" class="btn btn-outline-dark mb-3">ใช้โค้ดส่วนลด</button>
+                        </div>
+                    </form>
                 </div>
             </div>
             <button type="submit" class="btn btn-warning" style="margin-top:1em; margin-left:7em; margin-bottom:2em; padding-left:2em; padding-right:2em;">ยืนยัน</button>
