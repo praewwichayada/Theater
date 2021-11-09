@@ -32,12 +32,16 @@
 <!--<div th:insert="fragments/header :: header"></div>-->
 <h1>dddd</h1>
 <div class="box-all-movie">
-    <input class="form-control me-2" id="inputforsearch" type="search" placeholder="ค้นหา" aria-label="Search">
-    <a type="button" onclick="searchMovie()">
-      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+  <div class="input-group mb-3" style="width:70em; margin-top:6em; margin-left:10em;">
+    <input type="search" class="form-control" id="inputforsearch" placeholder="ค้นหาชื่อภาพยนตร์" aria-describedby="button-addon">
+    <button class="btn btn-outline-danger" type="button" id="button-addon" onclick="searchMovie()">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
         <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
       </svg>
-    </a>
+      </button>
+  </div>
+
+
 <ul class="nav nav-pills mb-3" id="movies-tab" role="tablist">
   <li class="nav-item">
     <a class="nav-link active" id="showing-tab" data-toggle="pill" href="#movie-showing" role="tab" aria-controls="movie-showing" aria-selected="true">
