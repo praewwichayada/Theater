@@ -52,8 +52,17 @@ public class MoviesController {
             }
         }
 
+        if(moviesOnAir.size() == 0 && moviesComingSoon.size() == 0){
+            return "redirect:/movies";
+        }
+
         model.addAttribute("moviesOnAir", moviesOnAir);
         model.addAttribute("moviesComingSoon", moviesComingSoon);
         return "movies";
+    }
+
+    @RequestMapping("/movies/search/**/{keyword}")
+    public String getBackPage(@PathVariable String keyword, Model model){
+        return "redirect:/movies/search/" + keyword;
     }
 }
