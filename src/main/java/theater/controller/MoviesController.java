@@ -9,6 +9,7 @@ import theater.service.MovieService;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.UUID;
 
 @Controller
 public class MoviesController {
@@ -26,6 +27,28 @@ public class MoviesController {
                 moviesOnAir.add(m);
             }else{
                 moviesComingSoon.add(m);
+            }
+        }
+
+        model.addAttribute("moviesOnAir", moviesOnAir);
+        model.addAttribute("moviesComingSoon", moviesComingSoon);
+        return "movies";
+    }
+
+    @RequestMapping("/movies/search/{keyword}")
+    public String getMoviesSearchPage(@PathVariable String keyword, Model model){
+        List<Movie> movies = movieService.getALl();
+        List<Movie> moviesOnAir = new ArrayList<>();
+        List<Movie> moviesComingSoon = new ArrayList<>();
+
+
+        for(Movie m : movies){
+            if(m.getName().contains(keyword) || m.getDescription().contains(keyword)){
+                if(m.getStatus().equals("on air")){
+                    moviesOnAir.add(m);
+                }else{
+                    moviesComingSoon.add(m);
+                }
             }
         }
 
