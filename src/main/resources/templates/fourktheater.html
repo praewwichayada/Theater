@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Theater</title>
+    <link th:rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
+    <script th:src="@{/js/bootstrap.min.js}"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai&display=swap" rel="stylesheet">
+
+
+    <script>
+       function img(item){
+        if(item.src == "http://image.free.in.th/v/2013/it/211103091247.jpg"){
+          item.src = "http://image.free.in.th/v/2013/iq/211103013237.png";
+        }
+        else{
+            item.src = "http://image.free.in.th/v/2013/it/211103091247.jpg";
+        }
+
+    }
+</script>
+
+
+    <script>
+    function getID(id){
+        document.getElementById("seat").innerHTML = id;
+    }
+</script>
+
+    <!--<script>-->
+    <!--    var str = '';-->
+    <!--    function getID(id){-->
+    <!--        str += '' + id;-->
+    <!--        document.getElementById("seat").innerHTML = str;-->
+
+    <!--    }-->
+    <!--</script>-->
+
+    <script>
+        function getTime(times){
+<!--            document.getElementById("time").innerHTML = times;-->
+            alert(times);
+        }
+    </script>
+
+
+
+
+
+
+
+
+
+
+</head>
+<body style="background-color:white;">
+
+<header>
+    <div th:insert="fragments/navbar :: navbar"></div>
+</header>
+
+<!--<div th:insert="fragments/header :: header"></div>-->
+
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-8" style="margin-left:3em">
+            <div class="box-all-cinemas">
+                <ul class="nav nav-pills mb-3" id="cinemas-tab" role="tablist">
+                    <li class="nav-item">
+                        <a class="nav-link active" id="bkcinemas-tab" data-toggle="pill" href="#fourkbkcinemas-showingseat" role="tab" aria-controls="fourkbkcinemas-showingseat" aria-selected="true">
+                            เลือกรอบภาพยนตร์
+                        </a>
+                    </li>
+                </ul>
+
+                <div class="tab-content" id="pills-tab-content">
+
+
+
+                    <!-----4K Theater----->
+                    <div class="tab-pane fade" id="fourkbkcinemas-showingseat" role="tabpanel" aria-labelledby="fourbkcinemas-showingseat" style="background-color:#1e1e20;">
+                        <!--                        <h4 style="magin-left:3em; margin-bottom:2em; color:black;">2.เลือกที่นั่ง</h4>-->
+                        <img border="0" src="http://image.free.in.th/v/2013/iy/211102033326.png" style="margin-left:20px; width:90px; height: 90px; margin-top:30px"/></br></br>
+                        <img border="0" src="http://image.free.in.th/v/2013/id/211102112448.jpg" style="margin-left:160px; width:620px; height: 80px; margin-bottom:70px; margin-top:70px;"/>
+                        <table class="center data" width="60%" style="margin-left:190px;">
+                            <tr style="height: 80px; border-color:#1e1e20;">
+                                <td class="right color-white bg-red" width="10%">D</td>
+                                <td class="center">
+                                    <label>
+                                        <button id="D1" type="button" onclick="getID(this.id)" style="width:33px; height: 33px; background-color: Transparent; background-repeat:no-repeat; border: none; cursor:pointer; overflow: hidden;">
+                                            <img src="http://image.free.in.th/v/2013/ia/211103091536.jpg" style="width:30px; height: 30px; margin-right:10em;"/></button>
+                                        <button id="D2" type="button" onclick="getID(this.id)" style="width:33px; height: 33px; background-color: Transparent; background-repeat:no-repeat; border: none; cursor:pointer; overflow: hidden;">
+                                            <img src="http://image.free.in.th/v/2013/ia/211103091536.jpg" style="width:30px; height: 30px; margin-right:10em;"/></button>
+                                        <button id="D3"type="button" onclick="getID(this.id)" style="width:33px; height: 33px; background-color: Transparent; background-repeat:no-repeat; border: none; cursor:pointer; overflow: hidden;">
+                                            <img src="http://image.free.in.th/v/2013/ia/211103091536.jpg" style="width:30px; height: 30px; margin-right:10em;"/></button>
+                                        <button id="D4"type="button" onclick="getID(this.id)" style="width:33px; height: 33px; background-color: Transparent; background-repeat:no-repeat; border: none; cursor:pointer; overflow: hidden;">
+                                            <img src="http://image.free.in.th/v/2013/ia/211103091536.jpg" style="width:30px; height: 30px; margin-right:10em;"/></button>
+                                        <button id="D5"type="button" onclick="getID(this.id)" style="width:33px; height: 33px; background-color: Transparent; background-repeat:no-repeat; border: none; cursor:pointer; overflow: hidden;">
+                                            <img src="http://image.free.in.th/v/2013/ia/211103091536.jpg" style="width:30px; height: 30px; margin-right:10em;"/></button>
+                                        <button id="D6"type="button" onclick="getID(this.id)" style="width:33px; height: 33px; background-color: Transparent; background-repeat:no-repeat; border: none; cursor:pointer; overflow: hidden;">
+                                            <img src="http://image.free.in.th/v/2013/ia/211103091536.jpg" style="width:30px; height: 30px; margin-right:10em;"/></button>
+                                        <button id="D7"type="button" onclick="getID(this.id)" style="width:33px; height: 33px; background-color: Transparent; background-repeat:no-repeat; border: none; cursor:pointer; overflow: hidden;">
+                                            <img src="http://image.free.in.th/v/2013/ia/211103091536.jpg" style="width:30px; height: 30px; margin-right:10em;"/></button>
+                                        <button id="D8"type="button" onclick="getID(this.id)" style="width:33px; height: 33px; background-color: Transparent; background-repeat:no-repeat; border: none; cursor:pointer; overflow: hidden;">
+                                            <img src="http://image.free.in.th/v/2013/ia/211103091536.jpg" style="width:30px; height: 30px; margin-right:10em;"/></button>
+                                    </label>
+                                </td>
+                                <td class="light  color-white bg-red" width="10%">D</td>
+                            </tr>
+
+                            <tr style="height: 80px;">
+                                <td class="right color-white bg-red" width="7%">C</td>
+                                <td class="center">
+                                    <label>
+                                        <button id="C1" type="button" onclick="getID(this.id)" style="width:33px; height: 33px; background-color: Transparent; background-repeat:no-repeat; border: none; cursor:pointer; overflow: hidden;">
+                                            <img src="http://image.free.in.th/v/2013/ia/211103091536.jpg" style="width:30px; height: 30px; margin-right:10em;"/></button>
+                                        <button id="C2" type="button" onclick="getID(this.id)" style="width:33px; height: 33px; background-color: Transparent; background-repeat:no-repeat; border: none; cursor:pointer; overflow: hidden;">
+                                            <img src="http://image.free.in.th/v/2013/ia/211103091536.jpg" style="width:30px; height: 30px; margin-right:10em;"/></button>
+                                        <button id="C3" type="button" onclick="getID(this.id)" style="width:33px; height: 33px; background-color: Transparent; background-repeat:no-repeat; border: none; cursor:pointer; overflow: hidden;">
+                                            <img src="http://image.free.in.th/v/2013/ia/211103091536.jpg" style="width:30px; height: 30px; margin-right:10em;"/></button>
+                                        <button id="C4" type="button" onclick="getID(this.id)" style="width:33px; height: 33px; background-color: Transparent; background-repeat:no-repeat; border: none; cursor:pointer; overflow: hidden;">
+                                            <img src="http://image.free.in.th/v/2013/ia/211103091536.jpg" style="width:30px; height: 30px; margin-right:10em;"/></button>
+                                        <button id="C5" type="button" onclick="getID(this.id)" style="width:33px; height: 33px; background-color: Transparent; background-repeat:no-repeat; border: none; cursor:pointer; overflow: hidden;">
+                                            <img src="http://image.free.in.th/v/2013/ia/211103091536.jpg" style="width:30px; height: 30px; margin-right:10em;"/></button>
+                                        <button id="C6" type="button" onclick="getID(this.id)" style="width:33px; height: 33px; background-color: Transparent; background-repeat:no-repeat; border: none; cursor:pointer; overflow: hidden;">
+                                            <img src="http://image.free.in.th/v/2013/ia/211103091536.jpg" style="width:30px; height: 30px; margin-right:10em;"/></button>
+                                        <button id="C7" type="button" onclick="getID(this.id)" style="width:33px; height: 33px; background-color: Transparent; background-repeat:no-repeat; border: none; cursor:pointer; overflow: hidden;">
+                                            <img src="http://image.free.in.th/v/2013/ia/211103091536.jpg" style="width:30px; height: 30px; margin-right:10em;"/></button>
+                                        <button id="C8" type="button" onclick="getID(this.id)" style="width:33px; height: 33px; background-color: Transparent; background-repeat:no-repeat; border: none; cursor:pointer; overflow: hidden;">
+                                            <img src="http://image.free.in.th/v/2013/ia/211103091536.jpg" style="width:30px; height: 30px; margin-right:10em;"/></button>
+                                    </label>
+                                </td>
+                                <td class="light  color-white bg-red" width="7%">C</td>
+                            </tr>
+
+                            <tr style="height: 80px;">
+                                <td class="right color-white bg-red" width="7%">B</td>
+                                <td class="center">
+                                    <label>
+                                        <button id="B1" type="button" onclick="getID(this.id)" style="width:33px; height: 33px; background-color: Transparent; background-repeat:no-repeat; border: none; cursor:pointer; overflow: hidden;">
+                                            <img src="http://image.free.in.th/v/2013/ia/211103091536.jpg" style="width:30px; height: 30px; margin-right:10em;"/></button>
+                                        <button id="B2" type="button" onclick="getID(this.id)" style="width:33px; height: 33px; background-color: Transparent; background-repeat:no-repeat; border: none; cursor:pointer; overflow: hidden;">
+                                            <img src="http://image.free.in.th/v/2013/ia/211103091536.jpg" style="width:30px; height: 30px; margin-right:10em;"/></button>
+                                        <button id="B3" type="button" onclick="getID(this.id)" style="width:33px; height: 33px; background-color: Transparent; background-repeat:no-repeat; border: none; cursor:pointer; overflow: hidden;">
+                                            <img src="http://image.free.in.th/v/2013/ia/211103091536.jpg" style="width:30px; height: 30px; margin-right:10em;"/></button>
+                                        <button id="B4" type="button" onclick="getID(this.id)" style="width:33px; height: 33px; background-color: Transparent; background-repeat:no-repeat; border: none; cursor:pointer; overflow: hidden;">
+                                            <img src="http://image.free.in.th/v/2013/ia/211103091536.jpg" style="width:30px; height: 30px; margin-right:10em;"/></button>
+                                        <button id="B5" type="button" onclick="getID(this.id)" style="width:33px; height: 33px; background-color: Transparent; background-repeat:no-repeat; border: none; cursor:pointer; overflow: hidden;">
+                                            <img src="http://image.free.in.th/v/2013/ia/211103091536.jpg" style="width:30px; height: 30px; margin-right:10em;"/></button>
+                                        <button id="B6" type="button" onclick="getID(this.id)" style="width:33px; height: 33px; background-color: Transparent; background-repeat:no-repeat; border: none; cursor:pointer; overflow: hidden;">
+                                            <img src="http://image.free.in.th/v/2013/ia/211103091536.jpg" style="width:30px; height: 30px; margin-right:10em;"/></button>
+                                        <button id="B7" type="button" onclick="getID(this.id)" style="width:33px; height: 33px; background-color: Transparent; background-repeat:no-repeat; border: none; cursor:pointer; overflow: hidden;">
+                                            <img src="http://image.free.in.th/v/2013/ia/211103091536.jpg" style="width:30px; height: 30px; margin-right:10em;"/></button>
+                                        <button id="B8" type="button" onclick="getID(this.id)" style="width:33px; height: 33px; background-color: Transparent; background-repeat:no-repeat; border: none; cursor:pointer; overflow: hidden;">
+                                            <img src="http://image.free.in.th/v/2013/ia/211103091536.jpg" style="width:30px; height: 30px; margin-right:10em;"/></button>
+                                    </label>
+                                </td>
+                                <td class="light  color-white bg-red" width="7%">B</td>
+                            </tr>
+
+                            <tr style="height: 80px;">
+                                <td class="right color-white bg-red" width="7%">A</td>
+                                <td class="center">
+                                    <label>
+                                        <button id="A1" type="button" onclick="getID(this.id)" style="width:33px; height: 33px; background-color: Transparent; background-repeat:no-repeat; border: none; cursor:pointer; overflow: hidden;">
+                                            <img src="http://image.free.in.th/v/2013/ia/211103091536.jpg" style="width:30px; height: 30px; margin-right:10em;"/></button>
+                                        <button id="A2" type="button" onclick="getID(this.id)" style="width:33px; height: 33px; background-color: Transparent; background-repeat:no-repeat; border: none; cursor:pointer; overflow: hidden;">
+                                            <img src="http://image.free.in.th/v/2013/ia/211103091536.jpg" style="width:30px; height: 30px; margin-right:10em;"/></button>
+                                        <button id="A3" type="button" onclick="getID(this.id)" style="width:33px; height: 33px; background-color: Transparent; background-repeat:no-repeat; border: none; cursor:pointer; overflow: hidden;">
+                                            <img src="http://image.free.in.th/v/2013/ia/211103091536.jpg" style="width:30px; height: 30px; margin-right:10em;"/></button>
+                                        <button id="A4" type="button" onclick="getID(this.id)" style="width:33px; height: 33px; background-color: Transparent; background-repeat:no-repeat; border: none; cursor:pointer; overflow: hidden;">
+                                            <img src="http://image.free.in.th/v/2013/ia/211103091536.jpg" style="width:30px; height: 30px; margin-right:10em;"/></button>
+
+
+                                    </label>
+                                </td>
+                                <td class="light  color-white bg-red" width="7%">A</td>
+                            </tr>
+                        </table>
+                        </br>
+                        </br>
+                        </br>
+                        </br>
+
+
+                        <img border="0" src="http://image.free.in.th/v/2013/ia/211103091536.jpg" style="width:36px; height: 36px; margin-bottom:8px; margin-left:40px;"/>
+                        <p style="color:white; margin-left:90px; margin-top:-38px;">Honeymoon twin Seat &nbsp; 450 บาท</p></br>
+                        </br>
+                        </br>
+                        </br>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-3" style="margin-left:66em; border-radius: 1.5em; border: solid 1px #F21137; position:fixed;">
+            <h3 style="text-align:center;">สรุปยอด</h3>
+            <!--        <form th:action="@{}" method="POST">-->
+            <div class="row">
+                <div class="col-sm-8" style="margin-top:2em;">
+                    <!--          <p th:text="'เรื่อง : ' + ${movie.name}"></p>-->
+                    <p>สถานที่ :</p>
+                    <span id="place"></span>
+                    <p>โรงภาพยนตร์ที่ :</p>
+                    <span id="cinema"></span>
+                    <p>เวลา :</p>
+                    <span id="time"></span>
+                    <p>ที่นั่ง : </p>
+                    <span id="seat"></span>
+                    <p>ราคา : </p>
+                </div>
+            </div>
+            <button type="submit" class="btn btn-warning" style="margin-top:1em; margin-left:7em; margin-bottom:2em; padding-left:2em; padding-right:2em;">ยืนยัน</button>
+            <!--        </form>-->
+        </div>
+
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+<footer>
+    <div th:insert="fragments/footer :: footer"></div>
+</footer>
+
+</body>
+<style>
+
+<!--    img{-->
+<!--        margin-left : 4px;-->
+<!--        margin-right : 12px;-->
+<!--    }-->
+
+    td{
+        text-align: center;
+        color: white;
+    }
+
+    div{
+        font-family:'Noto Sans Thai', sans-serif;
+    }
+
+    .img-thumbnail{
+        width: 270px;
+        height: 350px;
+
+
+    }
+
+    h3{
+
+        font-family:'Noto Sans Thai', sans-serif;
+        padding-top: 2em;
+    }
+
+    h6{
+        font-family:'Noto Sans Thai', sans-serif;
+    }
+
+    .col-8, .col-3{
+        margin-top: 10em;
+        margin-bottom: 8em;
+
+    }
+
+    #bkcinemas-tab, #bkcinemas-seattab{
+        font-size: 22px;
+        margin-bottom: 50px;
+    }
+
+
+    .nav {
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+        padding-left: 0;
+        margin-bottom: 0;
+        list-style: none;
+    }
+
+    dl, ol, ul {
+        margin-top: 0;
+        margin-bottom: 1rem;
+    }
+
+    *, ::after, ::before {
+        box-sizing: border-box;
+    }
+
+    user agent stylesheet
+    ul {
+      display: block;
+      list-style-type: disc;
+      margin-block-start: 1em;
+      margin-block-end: 1em;
+      margin-inline-start: 0px;
+      margin-inline-end: 0px;
+      padding-inline-start: 40px;
+    }
+
+    div{
+        font-family:'Noto Sans Thai', sans-serif;
+
+    }
+
+
+    ul#cinemas-tab, #bkcinemas-seattab{
+        align-items: center;
+        justify-content: center;
+    }
+
+    .box-all-cinemas .nav-pills .nav-link {
+        color: #888;
+    }
+
+    .box-all-cinemas .nav-pills .nav-link.active, .box-all-cinemas .nav-pills .show>.nav-link {
+        background-color: transparent;
+        border-bottom: 2px solid #F21137;
+        color: #F21137;
+    }
+
+
+    li {
+      display: list-item;
+      text-align: -webkit-match-parent;
+    }
+
+
+
+    h4{
+        margin-top: 1em;
+        margin-left: 1em;
+    }
+
+
+</style>
+</html>

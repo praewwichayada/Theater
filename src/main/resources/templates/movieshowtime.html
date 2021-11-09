@@ -26,14 +26,37 @@
     }
 </script>
 
- <script>
 
-       function getID(id){
-         document.getElementById("seat").innerHTML = id;
+<script>
+    function getID(id){
+<!--        document.getElementById("seat").innerHTML = id;-->
+        alert(id);
+
     }
-
-});
 </script>
+
+<!--<script>-->
+<!--    var str = '';-->
+<!--    function getID(id){-->
+<!--        str += '' + id;-->
+<!--        document.getElementById("seat").innerHTML = str;-->
+
+<!--    }-->
+<!--</script>-->
+
+    <script>
+        function getTime(times){
+<!--            document.getElementById("time").innerHTML = times;-->
+            alert(times);
+        }
+    </script>
+
+
+
+
+
+
+
 
 
 
@@ -87,9 +110,9 @@
                                         <div th:each="cinema : ${cinemas}" th:if="${#strings.equals(place.id, cinema.theaterID)}">
                                             <h4 th:text="@{โรงภาพยนตร์ที่ + ' ' + ${cinema.number} + ' ' + ${cinema.type}}" style="margin-top:1em;"></h4>
                                             <div th:each="showtime : ${showtimes}" th:if="${#strings.equals(cinema.id, showtime.cinemaID) and #strings.equals(movie.id, showtime.movieID)}" class="grid">
-                                                <button th:if="${#strings.equals(cinema.type,'normal')}" th:text="${showtime.dateTime}" type="button" id="m13bt11" class="btn btn-outline-dark" data-toggle="pill" href="#normalbkcinemas-showingseat" role="tab" aria-controls="normalbkcinemas-showingseat" style="margin-top: 2em; margin-left: 3em; padding-left: 1em; padding-right: 1em;"></button>
-                                                <button th:if="${#strings.equals(cinema.type,'3D')}" th:text="${showtime.dateTime}" type="button" id="m12bt18" class="btn btn-outline-dark" data-toggle="pill" href="#threedbkcinemas-showingseat" role="tab" aria-controls="threedbkcinemas-showingseat" style="margin-top: 2em; margin-left: 3em; padding-left: 1em; padding-right: 1em;"></button>
-                                                <button th:if="${#strings.equals(cinema.type,'4D')}" th:text="${showtime.dateTime}" type="button" id="m11bt15" class="btn btn-outline-dark" data-toggle="pill" href="#fourkbkcinemas-showingseat" role="tab" aria-controls="fourkbkcinemas-showingseat" style="margin-top: 2em; margin-left: 3em; padding-left: 1em; padding-right: 1em;" ></button>
+                                                <a th:if="${#strings.equals(cinema.type,'normal')}" th:text="${showtime.dateTime}" th:href="@{/normaltheater}"  type="button" id="m13bt11" class="btn btn-outline-dark"   style="margin-top: 2em; margin-left: 3em; padding-left: 1em; padding-right: 1em;" ></a>
+                                                <a th:if="${#strings.equals(cinema.type,'3D')}" th:text="${showtime.dateTime}"  th:href="@{/threedtheater}" type="button" id="m12bt18" class="btn btn-outline-dark"  style="margin-top: 2em; margin-left: 3em; padding-left: 1em; padding-right: 1em;"></a>
+                                                <a th:if="${#strings.equals(cinema.type,'4K')}" th:text="${showtime.dateTime}" th:href="@{/fourktheater}" type="button" id="m11bt15" class="btn btn-outline-dark"   style="margin-top: 2em; margin-left: 3em; padding-left: 1em; padding-right: 1em;" ></a>
                                             </div>
                                             <p  style="color:white; padding-bottom: 2em; margin-bottom: 2em; border-bottom: solid 1px #494949; margin-left: 1em; padding-left: 2em; margin-right: 10em;">_</p>
                                         </div>
@@ -139,21 +162,21 @@
                                 <td class="center">
                                     <label>
                                         <button type="button" id="C1" onclick="getID(this.id)" style="width:33px; height: 33px; background-color: Transparent; background-repeat:no-repeat; border: none; cursor:pointer; overflow: hidden;">
-                                            <img src="http://image.free.in.th/v/2013/it/211103091247.jpg" style="width:30px; height: 30px; margin-right:10em;"/></button>
+                                            <img src="http://image.free.in.th/v/2013/it/211103091247.jpg" onclick="img(this);" style="width:30px; height: 30px; margin-right:10em;"/></button>
                                         <button type="button" id="C2" onclick="getID(this.id)" style="width:33px; height: 33px; background-color: Transparent; background-repeat:no-repeat; border: none; cursor:pointer; overflow: hidden;">
-                                            <img src="http://image.free.in.th/v/2013/it/211103091247.jpg" style="width:30px; height: 30px; margin-right:10em;"/></button>
+                                            <img src="http://image.free.in.th/v/2013/it/211103091247.jpg" onclick="img(this);" style="width:30px; height: 30px; margin-right:10em;"/></button>
                                         <button type="button" id="C3" onclick="getID(this.id)" style="width:33px; height: 33px; background-color: Transparent; background-repeat:no-repeat; border: none; cursor:pointer; overflow: hidden;">
-                                            <img src="http://image.free.in.th/v/2013/it/211103091247.jpg" style="width:30px; height: 30px; margin-right:10em;"/></button>
+                                            <img src="http://image.free.in.th/v/2013/it/211103091247.jpg" onclick="img(this);" style="width:30px; height: 30px; margin-right:10em;"/></button>
                                         <button type="button" id="C4" onclick="getID(this.id)" style="width:33px; height: 33px; background-color: Transparent; background-repeat:no-repeat; border: none; cursor:pointer; overflow: hidden;">
-                                            <img src="http://image.free.in.th/v/2013/it/211103091247.jpg" style="width:30px; height: 30px; margin-right:10em;"/></button>
+                                            <img src="http://image.free.in.th/v/2013/it/211103091247.jpg" onclick="img(this);" style="width:30px; height: 30px; margin-right:10em;"/></button>
                                         <button type="button" id="C5" onclick="getID(this.id)" style="width:33px; height: 33px; background-color: Transparent; background-repeat:no-repeat; border: none; cursor:pointer; overflow: hidden;">
-                                            <img src="http://image.free.in.th/v/2013/it/211103091247.jpg" style="width:30px; height: 30px; margin-right:10em;"/></button>
+                                            <img src="http://image.free.in.th/v/2013/it/211103091247.jpg" onclick="img(this);" style="width:30px; height: 30px; margin-right:10em;"/></button>
                                         <button type="button" id="C6" onclick="getID(this.id)" style="width:33px; height: 33px; background-color: Transparent; background-repeat:no-repeat; border: none; cursor:pointer; overflow: hidden;">
-                                            <img src="http://image.free.in.th/v/2013/it/211103091247.jpg" style="width:30px; height: 30px; margin-right:10em;"/></button>
+                                            <img src="http://image.free.in.th/v/2013/it/211103091247.jpg" onclick="img(this);" style="width:30px; height: 30px; margin-right:10em;"/></button>
                                         <button type="button" id="C7" onclick="getID(this.id)" style="width:33px; height: 33px; background-color: Transparent; background-repeat:no-repeat; border: none; cursor:pointer; overflow: hidden;">
-                                            <img src="http://image.free.in.th/v/2013/it/211103091247.jpg" style="width:30px; height: 30px; margin-right:10em;"/></button>
+                                            <img src="http://image.free.in.th/v/2013/it/211103091247.jpg" onclick="img(this);" style="width:30px; height: 30px; margin-right:10em;"/></button>
                                         <button type="button" id="C8" onclick="getID(this.id)" style="width:33px; height: 33px; background-color: Transparent; background-repeat:no-repeat; border: none; cursor:pointer; overflow: hidden;">
-                                            <img src="http://image.free.in.th/v/2013/it/211103091247.jpg" style="width:30px; height: 30px; margin-right:10em;"/></button>
+                                            <img src="http://image.free.in.th/v/2013/it/211103091247.jpg" onclick="img(this);" style="width:30px; height: 30px; margin-right:10em;"/></button>
                                     </label>
                                 </td>
                                 <td class="light  color-white bg-red" width="7%">C</td>
@@ -164,21 +187,21 @@
                                 <td class="center">
                                     <label>
                                         <button type="button" id="B1" onclick="getID(this.id)" style="width:33px; height: 33px; background-color: Transparent; background-repeat:no-repeat; border: none; cursor:pointer; overflow: hidden;">
-                                            <img src="http://image.free.in.th/v/2013/it/211103091247.jpg" style="width:30px; height: 30px; margin-right:10em;"/></button>
+                                            <img src="http://image.free.in.th/v/2013/it/211103091247.jpg" onclick="img(this);" style="width:30px; height: 30px; margin-right:10em;"/></button>
                                         <button type="button" id="B2" onclick="getID(this.id)" style="width:33px; height: 33px; background-color: Transparent; background-repeat:no-repeat; border: none; cursor:pointer; overflow: hidden;">
-                                            <img src="http://image.free.in.th/v/2013/it/211103091247.jpg" style="width:30px; height: 30px; margin-right:10em;"/></button>
+                                            <img src="http://image.free.in.th/v/2013/it/211103091247.jpg" onclick="img(this);" style="width:30px; height: 30px; margin-right:10em;"/></button>
                                         <button type="button" id="B3" onclick="getID(this.id)"style="width:33px; height: 33px; background-color: Transparent; background-repeat:no-repeat; border: none; cursor:pointer; overflow: hidden;">
-                                            <img src="http://image.free.in.th/v/2013/it/211103091247.jpg" style="width:30px; height: 30px; margin-right:10em;"/></button>
+                                            <img src="http://image.free.in.th/v/2013/it/211103091247.jpg" onclick="img(this);" style="width:30px; height: 30px; margin-right:10em;"/></button>
                                         <button type="button" id="B4" onclick="getID(this.id)" style="width:33px; height: 33px; background-color: Transparent; background-repeat:no-repeat; border: none; cursor:pointer; overflow: hidden;">
-                                            <img src="http://image.free.in.th/v/2013/it/211103091247.jpg" style="width:30px; height: 30px; margin-right:10em;"/></button>
+                                            <img src="http://image.free.in.th/v/2013/it/211103091247.jpg" onclick="img(this);" style="width:30px; height: 30px; margin-right:10em;"/></button>
                                         <button type="button" id="B5" onclick="getID(this.id)" style="width:33px; height: 33px; background-color: Transparent; background-repeat:no-repeat; border: none; cursor:pointer; overflow: hidden;">
-                                            <img src="http://image.free.in.th/v/2013/it/211103091247.jpg" style="width:30px; height: 30px; margin-right:10em;"/></button>
+                                            <img src="http://image.free.in.th/v/2013/it/211103091247.jpg" onclick="img(this);" style="width:30px; height: 30px; margin-right:10em;"/></button>
                                         <button type="button" id="B6" onclick="getID(this.id)" style="width:33px; height: 33px; background-color: Transparent; background-repeat:no-repeat; border: none; cursor:pointer; overflow: hidden;">
-                                            <img src="http://image.free.in.th/v/2013/it/211103091247.jpg" style="width:30px; height: 30px; margin-right:10em;"/></button>
+                                            <img src="http://image.free.in.th/v/2013/it/211103091247.jpg" onclick="img(this);" style="width:30px; height: 30px; margin-right:10em;"/></button>
                                         <button type="button" id="B7" onclick="getID(this.id)" style="width:33px; height: 33px; background-color: Transparent; background-repeat:no-repeat; border: none; cursor:pointer; overflow: hidden;">
-                                            <img src="http://image.free.in.th/v/2013/it/211103091247.jpg" style="width:30px; height: 30px; margin-right:10em;"/></button>
+                                            <img src="http://image.free.in.th/v/2013/it/211103091247.jpg" onclick="img(this);" style="width:30px; height: 30px; margin-right:10em;"/></button>
                                         <button type="button" id="B8" onclick="getID(this.id)" style="width:33px; height: 33px; background-color: Transparent; background-repeat:no-repeat; border: none; cursor:pointer; overflow: hidden;">
-                                            <img src="http://image.free.in.th/v/2013/it/211103091247.jpg" style="width:30px; height: 30px; margin-right:10em;"/></button>
+                                            <img src="http://image.free.in.th/v/2013/it/211103091247.jpg" onclick="img(this);" style="width:30px; height: 30px; margin-right:10em;"/></button>
                                     </label>
                                 </td>
                                 <td class="light  color-white bg-red" width="7%">B</td>
@@ -189,14 +212,14 @@
                                 <td class="center">
                                     <label>
                                         <button type="button" id="A1" onclick="getID(this.id)" style="width:33px; height: 33px; background-color: Transparent; background-repeat:no-repeat; border: none; cursor:pointer; overflow: hidden;">
-                                            <img src="http://image.free.in.th/v/2013/it/211103091247.jpg" style="width:30px; height: 30px; margin-right:10em;"/></button>
+                                            <img src="http://image.free.in.th/v/2013/it/211103091247.jpg" onclick="img(this);" style="width:30px; height: 30px; margin-right:10em;"/></button>
                                         <button type="button" id="A2" onclick="getID(this.id)" style="width:33px; height: 33px; background-color: Transparent; background-repeat:no-repeat; border: none; cursor:pointer; overflow: hidden;">
-                                            <img src="http://image.free.in.th/v/2013/it/211103091247.jpg" style="width:30px; height: 30px; margin-right:10em;"/></button>
+                                            <img src="http://image.free.in.th/v/2013/it/211103091247.jpg" onclick="img(this);" style="width:30px; height: 30px; margin-right:10em;"/></button>
 
                                         <button type="button" id="A3" onclick="getID(this.id)" style="width:33px; height: 33px; background-color: Transparent; background-repeat:no-repeat; border: none; cursor:pointer; overflow: hidden;">
-                                            <img src="http://image.free.in.th/v/2013/it/211103091247.jpg" style="width:30px; height: 30px; margin-right:10em;"/></button>
+                                            <img src="http://image.free.in.th/v/2013/it/211103091247.jpg" onclick="img(this);" style="width:30px; height: 30px; margin-right:10em;"/></button>
                                         <button type="button" id="A4" onclick="getID(this.id)" style="width:33px; height: 33px; background-color: Transparent; background-repeat:no-repeat; border: none; cursor:pointer; overflow: hidden;">
-                                            <img src="http://image.free.in.th/v/2013/it/211103091247.jpg" style="width:30px; height: 30px; margin-right:10em;"/></button>
+                                            <img src="http://image.free.in.th/v/2013/it/211103091247.jpg" onclick="img(this);" style="width:30px; height: 30px; margin-right:10em;"/></button>
 
 
                                     </label>
@@ -448,20 +471,24 @@
             </div>
         </div>
 
-    <div class="col-3" style="margin-left:85em; border-radius: 1.5em; border: solid 1px #F21137; position:fixed;">
+    <div class="col-3" style="margin-left:66em; border-radius: 1.5em; border: solid 1px #F21137; position:fixed;">
         <h3 style="text-align:center;">สรุปยอด</h3>
 <!--        <form th:action="@{}" method="POST">-->
         <div class="row">
             <div class="col-sm-8" style="margin-top:2em;">
-                <p th:text="'เรื่อง : ' + ${movie.name}">เรื่อง : </p>
-                <p>สถานที่ : </p>
-                <p>โรงภาพยนตร์ที่ : </p>
+                <p th:text="'เรื่อง : ' + ${movie.name}"></p>
+                <p>สถานที่ :</p>
+                <span id="place"></span>
+                <p>โรงภาพยนตร์ที่ :</p>
+                <span id="cinema"></span>
                 <p>เวลา :</p>
+                <span id="time"></span>
                 <p>ที่นั่ง : </p>
+                <span id="seat"></span>
                 <p>ราคา : </p>
             </div>
         </div>
-        <button type="submit" class="btn btn-warning" style="margin-top:1em; margin-left:11em; margin-bottom:2em; padding-left:2em; padding-right:2em;">ยืนยัน</button>
+        <button type="submit" class="btn btn-warning" style="margin-top:1em; margin-left:7em; margin-bottom:2em; padding-left:2em; padding-right:2em;">ยืนยัน</button>
 <!--        </form>-->
     </div>
 
