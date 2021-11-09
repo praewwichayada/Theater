@@ -23,38 +23,66 @@
 <div th:insert="fragments/header :: header"></div>
   <h4>โปรโมชั่นทั้งหมด</h4>
 
-  <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
-    <div class="carousel-indicators">
-      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
-    </div>
-    <div class="carousel-inner">
-      <div class="carousel-item active">
-        <img src="https://cdn.majorcineplex.com/uploads/content/16632/cover_16632.jpg" class="d-block w-100" alt="...">
-      </div>
-      <div class="carousel-item">
-        <img src="http://www.starenews.com/wp-content/uploads/2020/11/%E0%B9%82%E0%B8%9A%E0%B8%A7%E0%B9%8C%E0%B8%A5%E0%B8%B4%E0%B9%88%E0%B8%87%E0%B9%80%E0%B8%81%E0%B8%A1%E0%B8%A5%E0%B8%B0-26-%E0%B8%9A%E0%B8%B2%E0%B8%97_%E0%B9%81%E0%B8%99%E0%B8%A7%E0%B8%99%E0%B8%AD%E0%B8%99.jpg" class="d-block w-100" alt="...">
-      </div>
-      <div class="carousel-item">
-        <img src="https://thethaiger.com/th/wp-content/uploads/sites/9/2019/11/78269287_967004260322081_6136094328390418432_n.jpg" class="d-block w-100" alt="...">
+  <div class="card-columns">
+    <tr th:each="promotion : ${promotions}">
+    <div class="card" style="width: 23rem;">
+      <img class="card-img-top" th:src="@{${promotion.image}}" alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title" th:text="${promotion.name}"></h5>
+        <p class="card-text" th:text="${promotion.detail}"></p>
+
+        <input type="text" th:value="${promotion.code}" id="${promotion.code}">
+        <button class="btn btn-outline-danger" onclick="myFunction('${promotion.code}')">Copy text</button>
       </div>
     </div>
-    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Previous</span>
-    </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Next</span>
-    </button>
+    </tr>
   </div>
+
+<!--  <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">-->
+<!--    <div class="carousel-indicators">-->
+<!--      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>-->
+<!--      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>-->
+<!--      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>-->
+<!--    </div>-->
+<!--    <div class="carousel-inner">-->
+<!--      <div class="carousel-item active">-->
+<!--        <img src="https://cdn.majorcineplex.com/uploads/content/16632/cover_16632.jpg" class="d-block w-100" alt="...">-->
+<!--      </div>-->
+<!--      <div class="carousel-item">-->
+<!--        <img src="http://www.starenews.com/wp-content/uploads/2020/11/%E0%B9%82%E0%B8%9A%E0%B8%A7%E0%B9%8C%E0%B8%A5%E0%B8%B4%E0%B9%88%E0%B8%87%E0%B9%80%E0%B8%81%E0%B8%A1%E0%B8%A5%E0%B8%B0-26-%E0%B8%9A%E0%B8%B2%E0%B8%97_%E0%B9%81%E0%B8%99%E0%B8%A7%E0%B8%99%E0%B8%AD%E0%B8%99.jpg" class="d-block w-100" alt="...">-->
+<!--      </div>-->
+<!--      <div class="carousel-item">-->
+<!--        <img src="https://thethaiger.com/th/wp-content/uploads/sites/9/2019/11/78269287_967004260322081_6136094328390418432_n.jpg" class="d-block w-100" alt="...">-->
+<!--      </div>-->
+<!--    </div>-->
+<!--    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">-->
+<!--      <span class="carousel-control-prev-icon" aria-hidden="true"></span>-->
+<!--      <span class="visually-hidden">Previous</span>-->
+<!--    </button>-->
+<!--    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">-->
+<!--      <span class="carousel-control-next-icon" aria-hidden="true"></span>-->
+<!--      <span class="visually-hidden">Next</span>-->
+<!--    </button>-->
+<!--  </div>-->
 
 
 <footer>
   <div th:insert="fragments/footer :: footer"></div>
 </footer>
 </body>
+
+
+<script>
+  function myFunction(id) {
+  var copyText = document.getElementById(id);
+  copyText.select();
+  copyText.setSelectionRange(0, 9999);
+  navigator.clipboard.writeText(copyText.value);
+  alert("คัดลอกโค้ด : " + copyText.value + " เรียบร้อย");
+}
+</script>
+
+
 <style>
 
     div{
@@ -68,6 +96,14 @@
         width: 1000px;
         height: 500px;
 
+    }
+
+    .card-columns{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 40px;
+        margin-bottom: 40px;
     }
 </style>
 </html>
