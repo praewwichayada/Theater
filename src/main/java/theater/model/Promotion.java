@@ -11,10 +11,9 @@ public class Promotion {
     private String code;
 
     private String detail;
-
     private String name;
-
     private String image;
+    private int discount;
 
     public String getCode() {
         return code;
@@ -46,5 +45,13 @@ public class Promotion {
 
     public void setImage(String image) {
         this.image = image;
+    }
+
+    public int getDiscount() {
+        return discount;
+    }
+
+    public void setDiscount(int discount) {
+        this.discount = discount;
     }
 }

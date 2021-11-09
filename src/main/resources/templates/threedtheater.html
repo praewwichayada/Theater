@@ -238,6 +238,7 @@
           <p th:text="'โรงภาพยนตร์ที่ : ' + ${cinema.number}"></p>
           <p th:text="'เวลา : ' + ${showTime.dateTime}"></p>
           <p>ที่นั่ง : <span id="seat"></span></p>
+          <p th:text="'ผู้ใช้ : ' + |${user}|"></p>
           <p th:text="'ราคา : ' + ${showTime.price}"></p>
           <div class="form-floating">
             <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea" style="margin-top:1em; margin-bottom:1em; margin-left:4em;"></textarea>

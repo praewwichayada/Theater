@@ -34,7 +34,6 @@ public class MovieShowtimeController {
     @RequestMapping("movies/{id}")
     public String getMovieShowtimePage(@PathVariable UUID id,Model model){
         model.addAttribute("movie", movieService.getMovie(id));
-
         List<Cinema> cinemaList = cinemaService.getALl();
         Collections.sort(cinemaList, new Comparator<Cinema>() {
             @Override
