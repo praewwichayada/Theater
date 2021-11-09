@@ -33,7 +33,7 @@ public class ThreeDTheaterController {
     PromotionService promotionService;
 
     @RequestMapping("/threedtheater/{movieID}/{placeID}/{cinemaID}/{showTimeID}")
-    public String getThreeDPage(@PathVariable UUID movieID, @PathVariable UUID placeID, @PathVariable UUID cinemaID, @PathVariable UUID showTimeID, Model model, @AuthenticationPrincipal OAuth2User principal) {
+    public String getThreeDPage(@PathVariable UUID movieID, @PathVariable UUID placeID, @PathVariable UUID cinemaID, @PathVariable UUID showTimeID, Model model) {
         model.addAttribute("movie", movieService.getMovie(movieID));
         model.addAttribute("place", placeService.getPlace(placeID));
         model.addAttribute("cinema", cinemaService.getCinema(cinemaID));
@@ -43,13 +43,11 @@ public class ThreeDTheaterController {
 
         model.addAttribute("finalPrice", showTime.getPrice());
 
-        model.addAttribute("user", principal.getAttribute("email"));
-
         return "threedtheater";
     }
 
     @RequestMapping("/threedtheater/{movieID}/{placeID}/{cinemaID}/{showTimeID}/{code}")
-    public String getThreeDWithPromotionPage(@PathVariable UUID movieID, @PathVariable UUID placeID, @PathVariable UUID cinemaID, @PathVariable UUID showTimeID, @PathVariable String code, Model model, @AuthenticationPrincipal OAuth2User principal) {
+    public String getThreeDWithPromotionPage(@PathVariable UUID movieID, @PathVariable UUID placeID, @PathVariable UUID cinemaID, @PathVariable UUID showTimeID, @PathVariable String code, Model model) {
 
         ShowTime showTime = showTimeService.getShowTime(showTimeID);
         List<Promotion> promotions = promotionService.getALl();
@@ -76,7 +74,6 @@ public class ThreeDTheaterController {
         model.addAttribute("showTime", showTime);
 
         model.addAttribute("code", code);
-        model.addAttribute("user", principal.getAttribute("email"));
 
         return "threedtheater";
     }

@@ -56,6 +56,9 @@
   <script>
     function getID(id){
           document.getElementById("seat").innerHTML = id;
+          document.getElementById("seatforshow").innerHTML = id;
+
+          alert(document.getElementById("seat").innerHTML);
     }
 </script>
 
@@ -69,30 +72,16 @@
     }
 </script>
 
-  <!--<script>-->
-  <!--    var str = '';-->
-  <!--    function getID(id){-->
-  <!--        str += '' + id;-->
-  <!--        document.getElementById("seat").innerHTML = str;-->
-
-  <!--    }-->
-  <!--</script>-->
-
-<!--  <script>-->
-<!--        function getTime(times){-->
-<!--&lt;!&ndash;            document.getElementById("time").innerHTML = times;&ndash;&gt;-->
-<!--            alert(times);-->
-<!--        }-->
-<!--    </script>-->
-
-
-
-
-
-
-
-
-
+  <script>
+    function booking(){
+          if(document.getElementById("seatforshow").innerHTML != ""){
+                const myArray = window.location.pathname.split("/");
+                window.location.href =  "/booking/" +  myArray[5] + "/" + document.getElementById("seatforshow").innerHTML
+          }else{
+                alert("กรุณาเลือกที่นั่ง");
+          }
+    }
+</script>
 
 </head>
 <body style="background-color:white;">
@@ -102,7 +91,7 @@
 </header>
 
 <!--<div th:insert="fragments/header :: header"></div>-->
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" onclose="">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
@@ -117,15 +106,17 @@
             <p th:text="'โรงภาพยนตร์ที่ : ' + ${cinema.number}"></p>
             <p th:text="'เวลา : ' + ${showTime.dateTime}"></p>
             <p>ที่นั่ง : <span id="seatforshow"></span></p>
-            <p th:text="'ราคา : ' + ${showTime.price}"></p>
+            <p th:text="'ราคา : ' + ${finalPrice}"></p>
           </div>
         </div>
       </div>
+
 
       <div class="modal-footer">
         <div class="modal-footer">
           <p style="color: #A42222;">**กรุณาถ่ายภาพหน้าจอตั๋วนี้ไว้เป็นหลักฐานการจอง</p>
         </div>
+        <button type="button" class="btn btn-warning"  onclick="booking()"  style="margin-top:1em; margin-left:7em; margin-bottom:2em; padding-left:2em; padding-right:2em;">ยืนยัน</button>
       </div>
     </div>
   </div>

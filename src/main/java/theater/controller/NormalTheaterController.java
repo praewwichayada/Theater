@@ -33,7 +33,7 @@ public class NormalTheaterController {
     PromotionService promotionService;
 
     @RequestMapping("/normaltheater/{movieID}/{placeID}/{cinemaID}/{showTimeID}")
-    public String getNormalPage(@PathVariable UUID movieID, @PathVariable UUID placeID, @PathVariable UUID cinemaID, @PathVariable UUID showTimeID, Model model, @AuthenticationPrincipal OAuth2User principal) {
+    public String getNormalPage(@PathVariable UUID movieID, @PathVariable UUID placeID, @PathVariable UUID cinemaID, @PathVariable UUID showTimeID, Model model) {
         model.addAttribute("movie", movieService.getMovie(movieID));
         model.addAttribute("place", placeService.getPlace(placeID));
         model.addAttribute("cinema", cinemaService.getCinema(cinemaID));
@@ -43,13 +43,11 @@ public class NormalTheaterController {
 
         model.addAttribute("finalPrice", showTime.getPrice());
 
-        model.addAttribute("user", principal.getAttribute("email"));
-
         return "normaltheater";
     }
 
     @RequestMapping("/normaltheater/{movieID}/{placeID}/{cinemaID}/{showTimeID}/{code}")
-    public String getNormalWithPromotionPage(@PathVariable UUID movieID, @PathVariable UUID placeID, @PathVariable UUID cinemaID, @PathVariable UUID showTimeID, @PathVariable String code, Model model, @AuthenticationPrincipal OAuth2User principal) {
+    public String getNormalWithPromotionPage(@PathVariable UUID movieID, @PathVariable UUID placeID, @PathVariable UUID cinemaID, @PathVariable UUID showTimeID, @PathVariable String code, Model model) {
 
         ShowTime showTime = showTimeService.getShowTime(showTimeID);
         List<Promotion> promotions = promotionService.getALl();
@@ -76,7 +74,6 @@ public class NormalTheaterController {
         model.addAttribute("showTime", showTime);
 
         model.addAttribute("code", code);
-        model.addAttribute("user", principal.getAttribute("email"));
 
         return "normaltheater";
     }
