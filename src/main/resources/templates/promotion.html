@@ -31,7 +31,7 @@
         <h5 class="card-title" th:text="${promotion.name}"></h5>
         <p class="card-text" th:text="${promotion.detail}"></p>
 
-        <input type="text" th:value="${promotion.code}" id="${promotion.code}">
+        <input type="text" th:value="${promotion.code}" id="${promotion.code}" disabled>
         <button class="btn btn-outline-danger" onclick="myFunction('${promotion.code}')">Copy text</button>
       </div>
     </div>
