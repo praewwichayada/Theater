@@ -92,7 +92,34 @@
 </header>
 
 <!--<div th:insert="fragments/header :: header"></div>-->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Ticket</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="row">
+          <div class="col-sm-8" style="margin-top:2em;">
+            <p th:text="'เรื่อง : ' + ${movie.name}"></p>
+            <p th:text="'สถานที่ : ' + ${place.name}"></p>
+            <p th:text="'โรงภาพยนตร์ที่ : ' + ${cinema.number}"></p>
+            <p th:text="'เวลา : ' + ${showTime.dateTime}"></p>
+            <p>ที่นั่ง : <span id="seatforshow"></span></p>
+            <p th:text="'ราคา : ' + ${showTime.price}"></p>
+          </div>
+        </div>
+      </div>
 
+      <div class="modal-footer">
+        <div class="modal-footer">
+          <p style="color: #A42222;">**กรุณาถ่ายภาพหน้าจอตั๋วนี้ไว้เป็นหลักฐานการจอง</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
 <div class="container-fluid">
   <div class="row">
@@ -251,7 +278,7 @@
           </form>
           </div>
         </div>
-      <button type="submit" class="btn btn-warning" style="margin-top:1em; margin-left:7em; margin-bottom:2em; padding-left:2em; padding-right:2em;">ยืนยัน</button>
+      <button type="button" class="btn btn-warning"  data-bs-toggle="modal" data-bs-target="#exampleModal"  style="margin-top:1em; margin-left:7em; margin-bottom:2em; padding-left:2em; padding-right:2em;">ยืนยัน</button>
       <!--        </form>-->
     </div>
 
